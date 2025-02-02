@@ -21,7 +21,7 @@ function TrangChu() {
                 <Routes>
                     <Route path="/" element={<Header />} >
                         <Route path="/" element={<All />} />
-                        {/* <Route path="dangnhap" element={<Login />} /> */}
+                        <Route path="dangnhap" element={<Login />} />
                         <Route path="dangki" element={<Singup />} />
                         <Route path="napthe" element={<Napthe />} />
                         <Route path="napatm" element={<NapATM />} />
