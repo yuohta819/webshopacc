@@ -20,7 +20,6 @@ const corsOptions = {
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie
 };
-app.use(express.static(path.join(__dirname, 'frontend/dist')));
 
 app.use(bodyParser.json())
 app.use(express.json())
