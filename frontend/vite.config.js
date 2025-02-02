@@ -8,5 +8,6 @@ export default defineConfig({
   server: {
     port: 4173, // hoặc cổng khác nếu cần
     host: '0.0.0.0', // để lắng nghe trên tất cả các IP
+    historyApiFallback: true,
   },
 })
