@@ -28,7 +28,7 @@ function Header() {
     }
     const token = sessionStorage.getItem("token-account")
     useEffect(() => {
-        const action = `https://webshopacc-12.onrender.com/users`
+        const action = `${host}/users`
         try {
             fetch(action, {
                 method: "GET",
