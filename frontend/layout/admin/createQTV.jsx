@@ -91,7 +91,7 @@ function CreateQTV() {
                 marginLeft: 211
             }}>Đăng kí tài khoản QTV</h2>
                 <Form.Item
-                    label="name"
+                    label="Tài Khoản"
                     name="name"
                     rules={[
                         {
@@ -108,7 +108,7 @@ function CreateQTV() {
                 </Form.Item>
 
                 <Form.Item
-                    label="password"
+                    label="Mật Khẩu"
                     name="password"
                     rules={[
                         {
