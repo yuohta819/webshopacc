@@ -7,12 +7,13 @@ import LoginAdmin from "../../layout/admin/loginadmin"
 import CreateAdmin from "../../layout/admin/createAdmin"
 import CheckAdmin from "../../models/admin/index.model"
 function Admin() {
+    const ADMIN = import.meta.env.VITE_ADMIN
     return (
         <>
             <BrowserRouter>
                 <Routes>
                     <Route path="/"  >
-                        <Route path="admin" element={<CheckAdmin><LoginAdmin/></CheckAdmin>}>
+                        <Route path={`${ADMIN}`} element={<CheckAdmin><LoginAdmin/></CheckAdmin>}>
                             <Route path="login" element={<LoginAdmin />} />
                             <Route path="tongquan" element={<Tongquan />} />
                             <Route path="createqtv" element={<CreateQTV />} />
