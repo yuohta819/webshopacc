@@ -1,0 +1,85 @@
+.selection-nap {
+    text-align: center;
+    padding-top: 20px;
+    background: #E8EBF9;
+    padding-bottom: 20px;
+    
+}
+.selection-nap .inner-wrap {
+    text-align: none;
+    padding-top: 20px;
+}
+
+.selection-nap .inner-wrap .container .row {
+    justify-content: center;
+}
+.selection-nap .inner-wrap .container .row .col-4 {
+    background-color: #DDDDDD;
+    padding: 0;
+    border-radius: 10px 10px 0  0;
+}
+.selection-nap .inner-wrap .container .row .col-4 .box-1 button {
+    padding: 15px 10px;
+}
+.selection-nap .inner-wrap .container .row .col-4 .box-1 button:hover {
+    background-color: #2AA3F2;
+    border-radius: 10px;
+}
+.selection-nap .inner-wrap .container .row .new {
+    padding: 20px;
+    background-color: #DDDDDD;
+    border-radius: 0 0 10px 10px;
+}
+.selection-nap .inner-wrap .container .row button {
+    border: 1px solid #DDDDDD;
+    background-color: #DDDDDD;
+}
+.selection-nap .inner-wrap .container .row .col-4 .box-1 {
+    display: flex;
+    justify-content: space-around
+}
+.selection-nap .inner-wrap .container .row .col-4 .content {
+    text-align: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.selection-nap .inner-wrap .container .row .col-4 .content p select {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    padding: 10px 20px;
+}
+.selection-nap .inner-wrap .container .row .col-4 .content input {
+    margin-left: 71px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+}
+.selection-nap .inner-wrap .container .row .col-4 .content p {
+    margin-left: 10px;
+}
+.selection-nap .inner-wrap .container .row .col-4 .content-3 {
+    display: flex;
+    align-items: flex-start;
+}
+.selection-nap .inner-wrap .container .row .col-4 .content-3 ul li {
+    font-size: 15px;
+    list-style-type: decimal;
+    text-align: left;
+}
+.selection-nap .inner-wrap .container .row .col-4 img {
+    width: 50px;
+}
+.selection-nap .inner-wrap .container .row .col-4 .warning p {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.selection-nap .inner-wrap .container .row .col-4 .content-4 button {
+    background-color: #218738;
+    width: 100%;
+}
+.selection-nap .inner-wrap .container .row .new .img img{
+    width: 370px;
+}

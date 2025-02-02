@@ -1,0 +1,71 @@
+a {
+    text-decoration: none;
+}
+.selection-1-login {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #DDDDDD;
+}
+.selection-1-login .selection-2-login .container .row {
+    background-color: white;
+    border-radius: 35px;
+}
+.selection-1-login .selection-2-login .container .row .loggin {
+    padding-top: 17px;
+    padding-bottom: 50px;
+}
+.selection-1-login .selection-2-login .container .row .col-6 {
+    text-align: center;
+    padding: 45px 0;
+
+}
+.selection-1-login .selection-2-login .container .row .img {
+    background-color: #E8EBF9;
+    border-radius: 35px 0 0 35px;
+}
+.selection-1-login .selection-2-login .container .row .col-6 img {
+    border-radius: 14px;
+    height: 389px;
+}
+.selection-1-login .selection-2-login .container .row .loggin h2 {
+    margin-bottom: 16px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form {
+    text-align: center;
+    font-size: 21px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form .account {
+    margin-bottom: 10px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form .login {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form .login button {
+    width: 316px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form .account input {
+    border-radius: 10px;
+    border: 1px solid #EFF1FF;
+    padding: 9px 60px 10px 17px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form svg {
+    margin-right: 10px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form .password input {
+    border-radius: 10px;
+    border: 1px solid #EFF1FF;
+    padding: 9px 60px 10px 17px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form .account span {
+    margin-right: 20px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form .password span {
+    margin-right: 20px;
+}
+.selection-1-login .selection-2-login .container .row .loggin form .singup {
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+

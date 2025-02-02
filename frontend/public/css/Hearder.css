@@ -1,0 +1,226 @@
+p {
+    margin: 0;
+}
+
+.selection-1 {
+    border-bottom: 2px solid #F1F8FE;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+}
+
+.selection-1 .container {
+    background-color: white;
+    max-width: 1260px;
+}
+
+.selection-1 .container .row {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection-1 .container .row .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 20px;
+
+}
+
+.selection-1 .container .row .col-1 {
+    width: 9.333333%;
+}
+
+.selection-1 .container .row .col-1 {
+    width: 5.666667%;
+}
+
+.selection-1 .container .row .col-2 .category {
+    display: flex;
+    align-items: center;
+}
+
+.selection-1 .container .row .col-2 .money {
+    text-align: center;
+}
+
+.selection-1 .container .row .col-2 .category .icon {
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #F2F2FE;
+}
+
+.selection-1 .container .row .col-2 .category p {
+    opacity: 0.5;
+}
+
+.selection-1 .container .row .col-2 .category .icon button {
+    border: inherit;
+}
+
+.selection-1 .container .row .col-2 {
+    width: 10.666667%;
+}
+
+.selection-1 .container .row .col-2 p {
+    margin-left: 10px;
+}
+
+.selection-1 .container .row .col-1 .logo img {
+    height: 50px;
+}
+
+.selection-1 .container .row .col-1 button {
+    border: 1px solid #F2F2FE;
+    padding: 10px 15px;
+    border-radius: 13px;
+}
+
+.selection-1 .container .row .col-1 .beel {
+    width: 6.66667%;
+}
+
+.selection-1 .container .row .col-5 {
+    width: 36.666667%;
+}
+
+.selection-1 .container .row .col-5 .search input {
+    border-radius: 10px;
+    border: 1px solid #F2F2FE;
+    width: 356px;
+    padding: 10px;
+}
+
+.selection-1 .container .row .col-5 .search {
+    display: flex;
+}
+
+.selection-1 .container .row .col-5 .search button {
+    margin-left: 10px;
+}
+
+.selection-1 .container .row .inner-wrap .col-2 .beel button {
+    margin-left: 10px;
+    border: 1px solid #F2F2FE;
+    padding: 10px 15px;
+    border-radius: 13px;
+}
+
+.selection-1 .container .row .inner-wrap .col-2 .beel .logout {
+    font-size: 16px;
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.selection-1 .container .row .inner-wrap .position {
+    position: relative;
+    width: 11.666667%;
+}
+
+.selection-1 .container .row .inner-wrap .inner-box {
+    position: absolute;
+    background: white;
+    top: 64px;
+    border-radius: 0 0 10px 10px;
+}
+
+.selection-1 .container .row .inner-wrap .inner-box .box {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px solid #F2F2FE;
+    padding: 20px;
+}
+
+.selection-1 .container .row .inner-wrap .inner-box svg {
+    color: #E91E63;
+}
+.selection-1 .container .row .inner-wrap .category p {
+    margin: 0;
+    margin-left: 10px;
+}
+.selection-1 .container .row .inner-wrap .col-2 .beel {
+    width: 275px;
+}
+
+.selection-1 .container .row .inner-wrap .inner-box button {
+    border: inherit;
+    background-color: white;
+}
+
+.selection-1 .container .row .inner-wrap .inner-box span {
+    border-bottom: inherit;
+    background-color: white;
+    color: #2F57EF;
+}
+
+.selection-2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.selection-2 img {
+    border-radius: 10px;
+}
+
+.selection-3 button {
+    border: inherit;
+    background: white;
+}
+
+.selection-3 img {
+    width: 80px;
+    margin-top: 20px;
+}
+
+.selection-4 .img {
+    display: flex;
+    padding-left: 143px;
+    margin-bottom: 20px;
+}
+
+.selection-4 .img h3 {
+    margin: 0;
+}
+
+.selection-4 :where(.css-dev-only-do-not-override-cdzvx5).ant-col-lg-6 {
+    max-width: 20%;
+}
+
+.selection-end {
+    text-align: center;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 10px 0;
+    font-size: 15px;
+}
+
+.selection-5 {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #0078FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.selection-5 {
+    width: 80px;
+    height: 80px;
+}
+.selection-5 svg{
+    font-size: 43px;
+    color: white;
+}
+.selection-end p {
+    margin: 0;
+}
