@@ -77,6 +77,7 @@ module.exports.Login = async (req, res) => {
 
 // [GET] Users
 module.exports.Users = async (req, res) => {
+    console.log(req)
     try {
         const token = req.headers.authorization
         const decoded = jwt.verify(token, SECRETKEY)
@@ -89,7 +90,7 @@ module.exports.Users = async (req, res) => {
         })
         res.json(data)
     } catch (error) {
-        res.json("Error")
+        res.json("loi cai user")
     }
 }
 // End Users
