@@ -5,6 +5,7 @@ const app = express()
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 10000
+const URL = process.env.URL_FRONTEND
 const routeClient = require("../backend/router/client/index.route")
 const routeAdmin = require("../backend/router/admin/index.route")
 const routeQTV = require("../backend/router/QTV/index.route")
@@ -15,7 +16,7 @@ app.use(cookieParser());
 app.use(express.static("public"));
 app.use(methodOverride('_method'));
 const corsOptions = {
-  origin: 'https://webshopacc-13.onrender.com', // Đảm bảo đây là URL frontend 
+  origin: `${URL}`, // Đảm bảo đây là URL frontend 
   methods: "GET, POST, PUT, DELETE",
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie
