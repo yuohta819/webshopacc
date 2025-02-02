@@ -7,6 +7,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 4173, // hoặc cổng khác nếu cần
-    host: true, // để lắng nghe trên tất cả các IP
+    host: '0.0.0.0', // để lắng nghe trên tất cả các IP
   },
 })
