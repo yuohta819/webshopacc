@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(express.static("public"));
 app.use(methodOverride('_method'));
 const corsOptions = {
-  origin: 'https://webshopacc.vercel.app/', // Đảm bảo đây là URL frontend 
+  origin: 'https://webshopacc.vercel.app', // Đảm bảo đây là URL frontend 
   methods: "GET, POST, PUT, DELETE",
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie

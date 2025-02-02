@@ -12,7 +12,7 @@ function Singup() {
     const [data, setData] = useState("")
     const [result, setResult] = useState("error")
     const host = import.meta.env.VITE_API_URL_BACKEND;
-    const action = `https://webshopacc.vercel.app/signup`
+    const action = `${host}/signup`
     const navigate = useNavigate()
     function handdleSubmit(e) {
         e.preventDefault()
