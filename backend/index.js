@@ -20,7 +20,7 @@ const corsOptions = {
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie
 };
-route.get("/users", Test.Test);
+app.use("/users", Test.Test);
 
 app.use(bodyParser.json())
 app.use(express.json())
