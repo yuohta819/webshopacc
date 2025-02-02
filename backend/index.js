@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 10000
 const routeClient = require("../backend/router/client/index.route")
 const routeAdmin = require("../backend/router/admin/index.route")
 const routeQTV = require("../backend/router/QTV/index.route")
-
+const Test = require("../backend/router/client/test")
 const methodOverride = require('method-override');
 app.use(cors())
 app.use(cookieParser());
@@ -20,9 +20,7 @@ const corsOptions = {
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie
 };
-app.get("/users", (req, res) => {
-  res.send("Backend is running!");
-});
+app.get("/users", Test);
 
 app.use(bodyParser.json())
 app.use(express.json())
