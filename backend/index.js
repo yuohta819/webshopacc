@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 10000
 const routeClient = require("../backend/router/client/index.route")
 const routeAdmin = require("../backend/router/admin/index.route")
 const routeQTV = require("../backend/router/QTV/index.route")
@@ -19,6 +19,9 @@ const corsOptions = {
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie
 };
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 app.use(cors())
 app.use(bodyParser.json())
 app.use(express.json())
