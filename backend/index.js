@@ -18,7 +18,7 @@ const corsOptions = {
   origin: URL_FRONTEND, // Đảm bảo đây là URL frontend 
   credentials: true,  // Cho phép gửi cookie
 };
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
