@@ -2,6 +2,7 @@ require('dotenv').config();
 const cors = require('cors')
 const express = require('express')
 const app = express()
+const path = require('path');
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 10000
@@ -15,6 +16,7 @@ const methodOverride = require('method-override');
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'dist')));
 const corsOptions = {
   origin: `${URL}`, // Đảm bảo đây là URL frontend 
   methods: "GET, POST, PUT, DELETE",
