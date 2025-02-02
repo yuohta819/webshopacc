@@ -69,7 +69,7 @@ function Singup() {
                                 <img src="https://inkythuatso.com/uploads/thumbnails/800/2022/04/hinh-anh-anime-ngau-loi-16-29-15-02-33.jpg" alt="" />
                             </div>
                             <div className="col-6 loggin">
-                                <form action="" onSubmit={handdleSubmit}>
+                                <form action="" onSubmit={handdleSubmit} >
                                     <h2>Đăng Kí</h2>
                                     <div className="account">
                                         <MdDriveFileRenameOutline />

@@ -76,7 +76,7 @@ const ForgotPass = () => {
                                 <Form onSubmitCapture={handdleSubmit}
                                     name="login"
                                     initialValues={{ remember: true }}
-                                    style={{ maxWidth: 360, marginLeft: 160 }}
+                                    
                                 >
                                     <Form.Item
                                         name="username"

@@ -1,159 +1,14 @@
-p {
-    margin: 0;
-}
-
-.selection-1 {
-    border-bottom: 2px solid #F1F8FE;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-
-}
-
-.selection-1 .container {
-    background-color: white;
-    max-width: 1260px;
-}
-
-.selection-1 .container .row {
-    justify-content: space-between;
-    align-items: center;
-}
-
-.selection-1 .container .row .inner-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 20px;
-
-}
-
-.selection-1 .container .row .col-1 {
-    width: 9.333333%;
-}
-
-.selection-1 .container .row .col-1 {
-    width: 5.666667%;
-}
-
-.selection-1 .container .row .col-2 .category {
-    display: flex;
-    align-items: center;
-}
-
-.selection-1 .container .row .col-2 .money {
-    text-align: center;
-}
-
-.selection-1 .container .row .col-2 .category .icon {
-    padding: 10px 15px;
+.selection-1 .box button {
+    padding: 10px 24px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    background: #F2F2FE;
-}
-
-.selection-1 .container .row .col-2 .category p {
-    opacity: 0.5;
-}
-
-.selection-1 .container .row .col-2 .category .icon button {
-    border: inherit;
-}
-
-.selection-1 .container .row .col-2 {
-    width: 10.666667%;
-}
-
-.selection-1 .container .row .col-2 p {
+    border: 1px solid white;
     margin-left: 10px;
 }
 
-.selection-1 .container .row .col-1 .logo img {
-    height: 50px;
-}
-
-.selection-1 .container .row .col-1 button {
-    border: 1px solid #F2F2FE;
-    padding: 10px 15px;
-    border-radius: 13px;
-}
-
-.selection-1 .container .row .col-1 .beel {
-    width: 6.66667%;
-}
-
-.selection-1 .container .row .col-5 {
-    width: 36.666667%;
-}
-
-.selection-1 .container .row .col-5 .search input {
-    border-radius: 10px;
-    border: 1px solid #F2F2FE;
-    width: 356px;
-    padding: 10px;
-}
-
-.selection-1 .container .row .col-5 .search {
-    display: flex;
-}
-
-.selection-1 .container .row .col-5 .search button {
-    margin-left: 10px;
-}
-
-.selection-1 .container .row .inner-wrap .col-2 .beel button {
-    margin-left: 10px;
-    border: 1px solid #F2F2FE;
-    padding: 10px 15px;
-    border-radius: 13px;
-}
-
-.selection-1 .container .row .inner-wrap .col-2 .beel .logout {
-    font-size: 16px;
-    margin-left: 16px;
-    cursor: pointer;
-}
-
-.selection-1 .container .row .inner-wrap .position {
-    position: relative;
-    width: 11.666667%;
-}
-
-.selection-1 .container .row .inner-wrap .inner-box {
-    position: absolute;
-    background: white;
-    top: 64px;
-    border-radius: 0 0 10px 10px;
-}
-
-.selection-1 .container .row .inner-wrap .inner-box .box {
-    width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    border-bottom: 1px solid #F2F2FE;
-    padding: 20px;
-}
-
-.selection-1 .container .row .inner-wrap .inner-box svg {
-    color: #E91E63;
-}
-.selection-1 .container .row .inner-wrap .category p {
-    margin: 0;
-    margin-left: 10px;
-}
-.selection-1 .container .row .inner-wrap .col-2 .beel {
-    width: 275px;
-}
-
-.selection-1 .container .row .inner-wrap .inner-box button {
-    border: inherit;
+.selection-1 .box {
     background-color: white;
-}
-
-.selection-1 .container .row .inner-wrap .inner-box span {
-    border-bottom: inherit;
-    background-color: white;
-    color: #2F57EF;
 }
 
 .selection-2 {
@@ -164,6 +19,10 @@ p {
 
 .selection-2 img {
     border-radius: 10px;
+}
+
+.selection-2-login form {
+    padding: 0 135px;
 }
 
 .selection-3 button {
@@ -213,14 +72,288 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
+
 .selection-5 {
     width: 80px;
     height: 80px;
 }
-.selection-5 svg{
+
+.selection-5 svg {
     font-size: 43px;
     color: white;
 }
+
 .selection-end p {
     margin: 0;
+}
+
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.selection-1 .inner-wrap .inner-box {
+    display: flex;
+    position: absolute;
+    left: 20%;
+    top: 70px;
+}
+
+.selection-1 {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 20px;
+}
+
+.inner-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    max-width: 50px;
+    height: auto;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    justify-content: center;
+}
+
+.category p {
+    margin: 0;
+}
+
+.category button {
+    border: 1px solid #F1F8FE;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.search input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.money button {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.beel button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.box-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.box-2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout {
+    cursor: pointer;
+    color: red;
+    font-size: 14px;
+}
+
+.selection-1-login .selection-2-login .container .row .loggin form {
+    text-align: center;
+    font-size: 15px !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+    .search {
+        width: 250px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .selection-2-login .img {
+        display: none;
+    }
+
+    .selection-2-login .row {
+        justify-content: center;
+    }
+
+    .selection-2-login .row form {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .selection-2-login .row form {
+        padding: 0;
+    }
+
+    .selection-1 .inner-wrap .inner-box {
+        left: 0%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inner-wrap {
+        flex-direction: column;
+    }
+
+    .search {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .money {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .selection-1-login .selection-2-login .container .row .img {
+        display: none;
+
+    }
+
+    .selection-1-login .selection-2-login .container .row {
+        justify-content: center;
+    }
+
+    .selection-1-login .selection-2-login .container .row .loggin form {
+        padding: 0;
+    }
+
+    .selection-1-login .selection-2-login .container .row .loggin form button {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        width: 100%;
+        background-color: #fff;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .inner-wrap .col-2 {
+        display: block;
+    }
+
+    .inner-wrap .col-2 p {
+        margin: 0;
+    }
+
+    .inner-wrap .col-2 .money {
+        margin: 0;
+    }
+
+    .inner-wrap .col-2 .category {
+        justify-content: center;
+    }
+
+    .inner-wrap .col-2 .category button {
+        border: 1px solid #F1F8FE;
+    }
+
+    .inner-wrap .col-1 .beel {
+        display: block;
+    }
+
+    .inner-wrap .col-1 .Carts {
+        display: none;
+    }
+
+    .inner-wrap .col-5 {
+        display: none;
+    }
+
+    .inner-wrap {
+        display: flex;
+        flex-direction: inherit;
+    }
+
+    .menu-toggle.active+.inner-wrap {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .selection-1 .inner-box {
+        left: 0%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        width: 60px;
+    }
+
+    .search input {
+        font-size: 14px;
+    }
+
+    .category p {
+        display: none;
+    }
+
+    .box-1 span,
+    .box-1 p {
+        font-size: 12px;
+    }
 }

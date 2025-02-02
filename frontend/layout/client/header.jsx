@@ -16,7 +16,7 @@ import { RiBillLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import TrangChu from "./Trangchu";
 import React from 'react';
-
+import { Col, Divider, Row } from 'antd';
 function Header() {
     const navigate = useNavigate()
     const [data, setData] = useState("")
@@ -92,8 +92,8 @@ function Header() {
                                 </div>
                             </div>
                             {click ? (
-                                <div className="inner-box" onMouseLeave={handdleLeave}>
-                                    <div className="box">
+                                <div className="inner-box" onMouseLeave={handdleLeave} >
+                                    <div className="box" style={{borderRadius: '0 0 10px 10px'}}>
                                         <button>
                                             <Link to="/">
                                                 <div className="content-1">
@@ -130,7 +130,7 @@ function Header() {
                                                 <span>Dịch vụ</span>
                                             </div>
                                         </button>
-                                        <button>
+                                        <button style={{padding: '20'}}>
                                             <div className="content-1">
                                                 <div className="icon"><RiBillLine /></div>
                                                 <span>Tin tức</span>
@@ -151,12 +151,12 @@ function Header() {
                                 </div>
                             </div>
                             <div className="col-1">
-                                <div className="beel">
+                                <div className="beel Carts">
                                     <button><CiBellOn /></button>
                                 </div>
                             </div>
                             <div className="col-1">
-                                <div className="beel">
+                                <div className="beel Carts" >
                                     <button><PiShoppingCartSimpleBold /></button>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@ function Header() {
                                         <div className="beel" style={{
                                             display: 'flex',
                                             alignItems: 'center'
-                                            }}>
+                                        }}>
                                             <div className="box-1">
                                                 <span>{item.nickname}</span>
                                                 <p style={{
@@ -191,7 +191,7 @@ function Header() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
             <Outlet />
 
         </>

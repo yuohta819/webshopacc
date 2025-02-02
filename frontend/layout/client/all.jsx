@@ -12,7 +12,7 @@ function All() {
     return (
         <>
             <div className="selection-2">
-                <img src="https://cdn3.upanh.info/upload/server-sw3/images/Banner%20Roblox_.jpg" alt="" />
+                <img style={{maxWidth: '100%', height: "auto"}} src="https://cdn3.upanh.info/upload/server-sw3/images/Banner%20Roblox_.jpg" alt="" />
             </div>
             <div className="selection-3">
                 <TrangChu />

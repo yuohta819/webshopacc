@@ -7,11 +7,9 @@ function CheckAdmin() {
     const admin = import.meta.env.VITE_ADMIN
     const token = sessionStorage.getItem("token-Accountadmin")
     const navigate = useNavigate()
-    console.log(token)
     useEffect(() => {
         if (!token) {
             navigate(`/${admin}/login`)
-            console.log("Di qua day")
         } 
     }, [navigate])
     return (

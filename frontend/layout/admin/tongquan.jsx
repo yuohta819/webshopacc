@@ -59,7 +59,7 @@ function Tongquan() {
       title: 'Id',
       dataIndex: 'count',
       key: 'count',
-      render: (text) => <a>{text}</a>,
+      render: (text, record, index) => <a>{index+1}</a>,
     },
     {
       title: 'Thành Tiền',
