@@ -19,7 +19,7 @@ const corsOptions = {
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie
 };
-app.get("/", (req, res) => {
+app.get("/dangki", (req, res) => {
   res.send("Backend is running!");
 });
 app.use(cors())
