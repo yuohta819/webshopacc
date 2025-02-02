@@ -17,7 +17,6 @@ function CreateQTV() {
 
     function handdleSubmit(e) {
         e.preventDefault()
-        console.log(e.target.name)
         fetch(action, {
             method: "POST",
             headers: {
@@ -55,7 +54,6 @@ function CreateQTV() {
             })
     }
     function handdleChange(e) {
-        console.log(e.target.name)
         setData({
             ...data,
             [e.target.name]: e.target.value
