@@ -20,8 +20,10 @@ const corsOptions = {
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie
 };
-
-
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend/dist', 'index.html'));
+})
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
