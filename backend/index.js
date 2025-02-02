@@ -19,7 +19,7 @@ const corsOptions = {
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,  // Cho phép gửi cookie
 };
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
