@@ -4,7 +4,6 @@ const app = express()
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT
-const URL_FRONTEND = process.env.URL_FRONTEND
 const routeClient = require("../backend/router/client/index.route")
 const routeAdmin = require("../backend/router/admin/index.route")
 const routeQTV = require("../backend/router/QTV/index.route")
