@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "./",
   plugins: [react()],
+  server: {
+    port: 4173, // hoặc cổng khác nếu cần
+    host: true, // để lắng nghe trên tất cả các IP
+  },
 })
