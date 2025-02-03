@@ -15,7 +15,7 @@ route.get("/users", Controller.Users)
 // End Users
 
 // [POST] Nap the
-route.post("/napthe", Controller.Napthe)
+route.post("/napthe/:link", Controller.Napthe)
 // End Nap The
 
 // [POST] Nap atm

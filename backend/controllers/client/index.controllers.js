@@ -104,7 +104,7 @@ module.exports.Napthe = async (req, res) => {
             seri: req.body.seri,
             code: req.body.code,
             price: req.body.price,
-            link: req.body.link,
+            link: req.params.link,
             token: req.headers.authorization
         })
         data.save()

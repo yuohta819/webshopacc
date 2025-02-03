@@ -9,18 +9,19 @@ import { Button, Flex, Form, Input, Select } from 'antd';
 import { InputNumber } from 'antd';
 import SideBar from "./siderbar";
 function Napthe() {
-    const [check, setCheck] = useState(true)
+    const [check, setCheck] = useState("")
     const [data, setData] = useState("")
     const host = import.meta.env.VITE_API_URL_BACKEND;
-    const action = `${host}/napthe`
+    
     const link = import.meta.env.VITE_FACEBOOK
     const token = sessionStorage.getItem("token-account")
-    const nav = useNavigate()
+    const navigate = useNavigate()
     function handdleSubmit(e) {
         e.preventDefault()
         if (!token) {
             nav("/dangnhap")
         }
+        const action = `${host}/napthe/${check}`
         fetch(action, {
             method: "POST",
             headers: {
@@ -31,6 +32,7 @@ function Napthe() {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 if (data == "fail") {
                     toast.warning("Nạp thẻ thất bại! ", {
                         position: "top-right",
@@ -41,37 +43,33 @@ function Napthe() {
                         draggable: true,
                     });
                 }
-                else if (data === "success") {
-                    toast.success("Nạp thẻ thành công! Đang chờ xử lí", {
-                        position: "top-right",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                    });
-                    setTimeout(() => {
-                        navigate("/")
-                    }, 5000)
-                }
+                // else if (data === "success") {
+                //     toast.success("Nạp thẻ thành công! Đang chờ xử lí", {
+                //         position: "top-right",
+                //         autoClose: 3000,
+                //         hideProgressBar: false,
+                //         closeOnClick: true,
+                //         pauseOnHover: true,
+                //         draggable: true,
+                //     });
+                //     setTimeout(() => {
+                //         navigate("/")
+                //     }, 5000)
+                // }
             })
     }
     function handdleChange(value, option) {
+        console.log(value)
         setData({
             ...data,
             [option.name]: value
         })
     }
     console.log(data)
-    function handdleCheck() {
-        if (check) {
-            setCheck(false)
-        } else {
-            setCheck(true)
-        }
-    }
     const [form] = Form.useForm();
-
+    function hanndleCheck(e) {
+        setCheck(e.target.value)
+    }
     return (
         <>
 
@@ -132,10 +130,10 @@ function Napthe() {
                         stringMode
                     />
                 </Form.Item>
-                <Form.Item name="link" label="Link Facebook:" >
-                    <Input.TextArea rows={6} style={{ height: 34 }} onChange={(value) => handdleChange(value, { name: "link" })} />
+                <Form.Item name="linked" label="Link Facebook:" >
+                    <Input name="linked" rows={6} style={{ height: 34 }} onChange={hanndleCheck} />
                 </Form.Item>
-                <Form.Item name="link" label="Lưu ý:" >
+                <Form.Item  label="Lưu ý:" >
                     <ul>
                         <li>Nạp qua thẻ cào sẽ bị chiết khấu ví dụ 10k = 8k vào tài khoản. Chiết khấu sẽ tùy vào bên thứ 3</li>
                         <li>Khi nhập xong nhấn nút đã nạp bên dưới</li>

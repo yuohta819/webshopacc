@@ -13,7 +13,6 @@ function Singup() {
     const [result, setResult] = useState("error")
     const host = import.meta.env.VITE_API_URL_BACKEND;
     const action = `${host}/signup`
-    console.log(action)
     const navigate = useNavigate()
     function handdleSubmit(e) {
         e.preventDefault()
@@ -26,7 +25,6 @@ function Singup() {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data === "success") {
                     toast.success("Tạo tài khoản thành công!", {
                         position: "top-right",
