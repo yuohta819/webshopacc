@@ -57,7 +57,7 @@ const Adminn = () => {
                   <Link to={`/${admin}/createqtv`}>Tài Khoản QTV</Link>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<MdOutlineManageAccounts />}>
-                  <Link >Tài Khoản Khách Hàng</Link>
+                  <Link to={`/${admin}/accountusers`} >Tài Khoản Khách Hàng</Link>
                 </Menu.Item>
               </Menu.SubMenu>
              

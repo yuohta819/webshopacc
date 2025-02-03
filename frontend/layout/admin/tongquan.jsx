@@ -20,7 +20,6 @@ function Tongquan() {
         setBill(newData)
       })
   }, [data, deleted])
-  console.log(bill)
   function handdleClick(e) {
      const local = `${host}/${admin}/change-status/${e.currentTarget.value}/${e.currentTarget.title}/Robux`
      

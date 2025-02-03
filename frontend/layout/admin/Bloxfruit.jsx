@@ -3,12 +3,8 @@ import { Flex, Input, Form } from 'antd';
 const { TextArea } = Input;
 import { Col, Row } from 'antd';
 import { Select } from 'antd';
-const onChange = (e) => {
-    console.log('Change:', e.target.value);
-};
-const onSearch = (value) => {
-    console.log('search:', value);
-};
+import { useState } from 'react';
+
 function Bloxfruit() {
     const [data, setData] = useState([])
     const host = import.meta.env.VITE_API_URL_BACKEND
@@ -59,15 +55,14 @@ function Bloxfruit() {
     <h2 style={{ textAlign: 'center', marginBottom: "20px", marginTop: "24px" }}>Cập nhật Blox Fruit</h2>
     <Row style={{ justifyContent: "space-around" }}>
         <Col span={8}>
-            <Form>
+            <Form onSubmitCapture={handdleSubmit}>
                 <p>Cập Nhật Giá Sản Phẩm</p>
                 <Flex vertical gap={32}>
                     <Select
                         showSearch
                         placeholder="Select a person"
                         optionFilterProp="label"
-                        onChange={onChange}
-                        onSearch={onSearch}
+                        onChange={(value) => handdleChange('type', value)}
                         options={[
                             {
                                 value: 'jack',
@@ -83,11 +78,10 @@ function Bloxfruit() {
                             },
                         ]}
                     />
-                    <TextArea showCount maxLength={100} onChange={onChange} placeholder="can resize" />
+                    <TextArea showCount maxLength={100} onChange={(value) => handdleChange('price', value)} placeholder="can resize" />
                     <TextArea
                         showCount
                         maxLength={100}
-                        onChange={onChange}
                         placeholder="disable resize"
                         style={{
                             height: 120,
@@ -95,7 +89,7 @@ function Bloxfruit() {
                         }}
                     />
                 </Flex>
-                <button type="button" style={{ marginTop: '30px' }} className="btn btn-primary">Cập Nhật</button>
+                <button type="submit" style={{ marginTop: '30px' }} className="btn btn-primary">Cập Nhật</button>
 
             </Form>
         </Col>
@@ -103,12 +97,12 @@ function Bloxfruit() {
             <Form>
                 <p>Cập Nhật Sản Phẩm Mới</p>
                 <Flex vertical gap={32}>
-                    <Input showCount maxLength={20} onChange={onChange} />
-                    <TextArea showCount maxLength={100} onChange={onChange} placeholder="can resize" />
+                    <Input showCount maxLength={20} onChange={(value) => handdleChange('type', value)} />
+                    <TextArea showCount maxLength={100} onChange={(value) => handdleChange('type', value)} placeholder="can resize" />
                     <TextArea
                         showCount
                         maxLength={100}
-                        onChange={onChange}
+                        onChange={(value) => handdleChange('type', value)}
                         placeholder="disable resize"
                         style={{
                             height: 120,

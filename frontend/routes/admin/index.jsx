@@ -8,6 +8,7 @@ import CreateAdmin from "../../layout/admin/createAdmin"
 import CheckAdmin from "../../models/admin/index.model"
 import Robux from "../../layout/admin/Rubux"
 import Bloxfruit from "../../layout/admin/Bloxfruit"
+import AccountUser from "../../layout/admin/accountuser"
 function Admin() {
     const ADMIN = import.meta.env.VITE_ADMIN
     return (
@@ -22,6 +23,7 @@ function Admin() {
                             <Route path="createadmin" element={<CreateAdmin/>} />
                             <Route path="changerobux" element={<Robux/>} />
                             <Route path="bloxfruit" element={<Bloxfruit/>} />
+                            <Route path="accountusers" element={<AccountUser/>} />
                         </Route>
                     </Route>
                 </Routes>

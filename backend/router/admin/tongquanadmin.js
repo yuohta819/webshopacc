@@ -27,6 +27,10 @@ route.post("/createadmin", Controller.CreateAdmin)
 route.post("/login", Controller.LoginAdmin)
 // End Login Admin
 
+// [GET] Change Bloxfruit
+route.get("/useraccount", Controller.Useraccount)
+// End Change Bloxfruit
+
 // [POST] Change Bloxfruit
 route.post("/bloxfruit", Controller.Bloxfruit)
 // End Change Bloxfruit

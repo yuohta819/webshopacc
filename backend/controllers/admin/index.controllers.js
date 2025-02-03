@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const Bill = require("../../api/databills")
 const AccountQTV = require("../../api/dataaccountqtv")
 const AccountADMIN = require("../../api/dataaccountadmin")
+const Account = require("../../api/dataproducts")
 const SECRETKEY = process.env.SECRETKEY
 // Ma hoa mat khau 
 const hashPassword = async (password) => {
@@ -141,8 +142,20 @@ module.exports.LoginAdmin = async (req, res) => {
 }
 // End Login Admin
 
+// [POST] Login Admin
+module.exports.Useraccount = async (req, res) => {
+    try {
+        const data = await Account.find({})
+        res.json(data)
+    } catch (error) {
+        res.json("Error")
+    }
+}
+// End Login Admin
+
+
 // [POST] Change Bloxfruit
 module.exports.Bloxfruit = async (req, res) => {
-    
+    console.log(req)
 }
 // End Change Bloxfruit
