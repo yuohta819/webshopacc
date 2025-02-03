@@ -65,7 +65,6 @@ function Napthe() {
             [option.name]: value
         })
     }
-    console.log(data)
     const [form] = Form.useForm();
     function hanndleCheck(e) {
         setCheck(e.target.value)
