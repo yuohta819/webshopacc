@@ -28,7 +28,7 @@ function LoginQTV() {
             .then(data => {
                 console.log(data)
                 if (data == "fail") {
-                    toast.warning("Nạp thẻ thất bại! ", {
+                    toast.warning("Đăng nhập thất bại! ", {
                         position: "top-right",
                         autoClose: 3000,
                         hideProgressBar: false,

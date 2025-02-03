@@ -26,6 +26,7 @@ const Dashboard = () => {
         style={{
           display: 'flex',
           alignItems: 'center',
+          width: 1514
         }}
       >
         <div className="demo-logo" />
@@ -43,6 +44,7 @@ const Dashboard = () => {
       <Content
         style={{
           padding: '0 48px',
+          width: 1519
         }}
       >
         <Breadcrumb

@@ -5,6 +5,7 @@ import "../../public/css/Hearder.css"
 import { Link, useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify";
 import { RiMessengerFill } from "react-icons/ri";
+import SideBar from "./siderbar";
 function NapATM() {
     const [check, setCheck] = useState(true)
     const [data, setData] = useState("")
@@ -179,6 +180,7 @@ function NapATM() {
                     <RiMessengerFill />
                 </div>
             </Link>
+            <SideBar />
             <div className="selection-end">
                 <p>© Copyright 2023 - Privacy Policy - Terms of Service</p>
                 <p>Operated by Loc Tram Cam, All Rights Reserved</p>

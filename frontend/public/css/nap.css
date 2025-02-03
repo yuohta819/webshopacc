@@ -18,10 +18,13 @@
     padding: 0;
     border-radius: 10px 10px 0  0;
 }
-.selection-nap .inner-wrap .container .row .col-4 .box-1 button {
+.selection-nap .inner-wrap .container .row .col-7 {
+    width: 53.333333% !important;
+}
+.selection-nap .inner-wrap .container .row .col-7 .box-1 button {
     padding: 15px 10px;
 }
-.selection-nap .inner-wrap .container .row .col-4 .box-1 button:hover {
+.selection-nap .inner-wrap .container .row .col-7 .box-1 button:hover {
     background-color: #2AA3F2;
     border-radius: 10px;
 }
@@ -34,9 +37,12 @@
     border: 1px solid #DDDDDD;
     background-color: #DDDDDD;
 }
-.selection-nap .inner-wrap .container .row .col-4 .box-1 {
+.selection-nap .inner-wrap .container .row .col-7 .box-1 {
     display: flex;
-    justify-content: space-around
+    margin-right: 0;
+    justify-content: space-around;
+    background-color: #DDDDDD;
+    border-radius: 10px 10px 0 0;
 }
 .selection-nap .inner-wrap .container .row .col-4 .content {
     text-align: none;
@@ -54,6 +60,17 @@
     margin-left: 71px;
     border-radius: 10px;
     border: 1px solid #DDDDDD;
+    width: 50%;
+}
+@media screen and (max-width: 730px) {
+    .selection-nap .inner-wrap .container .row .new {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .selection-nap .inner-wrap .container .row .col-4 .content p {
+       
+    }
 }
 .selection-nap .inner-wrap .container .row .col-4 .content p {
     margin-left: 10px;

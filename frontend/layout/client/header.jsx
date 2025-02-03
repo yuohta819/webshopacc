@@ -150,12 +150,12 @@ function Header() {
                                     <button type="button" className="btn btn-primary" onClick={handdleCheck}>Nạp tiền</button>
                                 </div>
                             </div>
-                            <div className="col-1">
-                                <div className="beel Carts">
+                            <div className="col-1" style={{width: 50}}>
+                                <div className="beel Carts" >
                                     <button><CiBellOn /></button>
                                 </div>
                             </div>
-                            <div className="col-1">
+                            <div className="col-1" style={{width: 50}}>
                                 <div className="beel Carts" >
                                     <button><PiShoppingCartSimpleBold /></button>
                                 </div>

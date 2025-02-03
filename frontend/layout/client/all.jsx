@@ -5,7 +5,7 @@ import { RiMessengerLine } from "react-icons/ri";
 import { RiMessengerFill } from "react-icons/ri";
 import Box from "./box";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import SideBar from "./siderbar";
 function All() {
     const link = import.meta.env.VITE_FACEBOOK
     const [check, setCheck] = useState("")
@@ -25,9 +25,10 @@ function All() {
                     <RiMessengerFill />
                 </div>
                 </Link>
+                <SideBar />
             <div className="selection-end">
                 <p>© Copyright 2023 - Privacy Policy - Terms of Service</p>
-                <p>Operated by Loc Tram Cam, All Rights Reserved</p>
+                <p>Operated by Loc Tram Cam & Phạm Khải, All Rights Reserved</p>
             </div>
         </>
     )
