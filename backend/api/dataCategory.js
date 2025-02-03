@@ -7,6 +7,8 @@ const bloxfruitShema = new mongoose.Schema({
     name: String,
     category: String,
     priceRobux: String,
+    type: String,
+    price: String,
     active: {
         type: Boolean,
         default: false
@@ -21,5 +23,5 @@ const bloxfruitShema = new mongoose.Schema({
 
 
 
-const Bloxfruit = mongoose.model("bloxfruitS", bloxfruitShema, "bloxfruitS")
+const Bloxfruit = mongoose.model("bloxfruit", bloxfruitShema, "bloxfruit")
 module.exports = Bloxfruit;

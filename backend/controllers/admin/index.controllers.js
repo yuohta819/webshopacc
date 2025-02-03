@@ -5,6 +5,7 @@ const Bill = require("../../api/databills")
 const AccountQTV = require("../../api/dataaccountqtv")
 const AccountADMIN = require("../../api/dataaccountadmin")
 const Account = require("../../api/dataproducts")
+const Bloxfruit = require("../../api/dataCategory")
 const SECRETKEY = process.env.SECRETKEY
 // Ma hoa mat khau 
 const hashPassword = async (password) => {
@@ -18,7 +19,6 @@ const hashPassword = async (password) => {
 module.exports.Tongquan = async (req, res) => {
     try {
         const data = await Bill.find({})
-        console.log(data)
         res.json(data)
     } catch (error) {
         res.json({
@@ -156,6 +156,32 @@ module.exports.Useraccount = async (req, res) => {
 
 // [POST] Change Bloxfruit
 module.exports.Bloxfruit = async (req, res) => {
-    console.log(req)
+    try {
+        const data = await Bloxfruit(req.body)
+        data.save()
+    } catch (error) {
+        res.json("Error")
+    }
 }
 // End Change Bloxfruit
+
+// [GET] Find Category
+module.exports.CategoryBloxfruit = async (req, res) => {
+    try {
+        const data = await Bloxfruit.find({})
+        res.json(data)
+    } catch (error) {
+        res.json("Error")
+    }
+}
+// End Find Category
+module.exports.ChangeCategory = async (req, res) => {
+    const type = req.params.type
+    const price = req.params.price
+    await Bloxfruit.updateOne({
+        type: type
+    }, {
+        price: price
+    })
+}
+// [POST] Change Category

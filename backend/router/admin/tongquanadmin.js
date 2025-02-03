@@ -34,4 +34,12 @@ route.get("/useraccount", Controller.Useraccount)
 // [POST] Change Bloxfruit
 route.post("/bloxfruit", Controller.Bloxfruit)
 // End Change Bloxfruit
+
+// [GET] Find Category Bloxfruit
+route.get("/findcategory", Controller.CategoryBloxfruit)
+// End Find Category Bloxfruit
+
+// [GET] Change Price Category
+route.get("/changecategory/:price/:type", Controller.ChangeCategory)
+// End Change Price Category
 module.exports = route
