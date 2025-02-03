@@ -43,19 +43,19 @@ function Napthe() {
                         draggable: true,
                     });
                 }
-                // else if (data === "success") {
-                //     toast.success("Nạp thẻ thành công! Đang chờ xử lí", {
-                //         position: "top-right",
-                //         autoClose: 3000,
-                //         hideProgressBar: false,
-                //         closeOnClick: true,
-                //         pauseOnHover: true,
-                //         draggable: true,
-                //     });
-                //     setTimeout(() => {
-                //         navigate("/")
-                //     }, 5000)
-                // }
+                else if (data === "success") {
+                    toast.success("Nạp thẻ thành công! Đang chờ xử lí", {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                    });
+                    setTimeout(() => {
+                        navigate("/")
+                    }, 5000)
+                }
             })
     }
     function handdleChange(value, option) {
