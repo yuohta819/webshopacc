@@ -1,0 +1,8 @@
+@media screen and (max-width: 920px) {
+    .sidebar-end .ant-row {
+        display: block;
+    }
+    .sidebar-end .ant-row .ant-col {
+        margin-bottom: 20px;
+    }
+}

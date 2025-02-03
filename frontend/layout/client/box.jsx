@@ -6,27 +6,27 @@ function Box() {
     const items = [
         {
             title: 'Robux 120h Gamepass',
-            transactions: '22,303',
+            transactions: '0',
             imgSrc: 'https://cdn3.upanh.info/upload/server-sw3/images/T%E1%BA%BFt/D%E1%BB%8Bch%20v%E1%BB%A5/Robux%20120h%20Gamepass.png',
         },
         {
             title: 'Toilet Tower Defense',
-            transactions: '3,375',
+            transactions: '0',
             imgSrc: 'https://cdn3.upanh.info/upload/server-sw3/images/T%E1%BA%BFt/D%E1%BB%8Bch%20v%E1%BB%A5/Ban%20Unot%20Skipidi%20tower%20Defense.png',
         },
         {
             title: 'Bán Trái Ác Quỷ Rương',
-            transactions: '5,397',
+            transactions: '0',
             imgSrc: 'https://cdn3.upanh.info/upload/server-sw3/images/T%E1%BA%BFt/D%E1%BB%8Bch%20v%E1%BB%A5/Ban%20Trai%20Ac%20Qu%E1%BB%B7%20Ruong.png',
         },
         {
             title: 'Bán Robux Chính Hãng',
-            transactions: '350,500',
+            transactions: '0',
             imgSrc: 'https://cdn3.upanh.info/upload/server-sw3/images/T%E1%BA%BFt/D%E1%BB%8Bch%20v%E1%BB%A5/Ban%20Robux%20Chinh%20Hang.png',
         },
         {
             title: 'Game Anime Defenders',
-            transactions: '6,416',
+            transactions: '0',
             imgSrc: 'https://cdn3.upanh.info/upload/server-sw3/images/T%E1%BA%BFt/D%E1%BB%8Bch%20v%E1%BB%A5/Ban%20Item%20Anime%20Defenders.png',
         },
     ];

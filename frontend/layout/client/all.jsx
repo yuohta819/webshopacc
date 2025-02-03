@@ -7,8 +7,8 @@ import Box from "./box";
 import { Link } from "react-router-dom";
 import SideBar from "./siderbar";
 function All() {
-    const link = import.meta.env.VITE_FACEBOOK
-    const [check, setCheck] = useState("")
+    const link = import.meta.env.VITE_FACEBOOK_LOC
+    const URL_QTV= import.meta.env.VITE_FACEBOOOK_CTV_1
     return (
         <>
             <div className="selection-2">
@@ -21,14 +21,17 @@ function All() {
                 <Box />
             </div>
                 <Link to={`${link}`}>
-                <div className="selection-5" >
+                <div className="selection-5" style={{zIndex: '4'}}>
                     <RiMessengerFill />
                 </div>
                 </Link>
                 <SideBar />
             <div className="selection-end">
                 <p>© Copyright 2023 - Privacy Policy - Terms of Service</p>
-                <p>Operated by Loc Tram Cam & Phạm Khải, All Rights Reserved</p>
+                <p>Operated by Lộc Trầm Cảm & Phạm Khải, All Rights Reserved</p>
+                <Link to={`${link}`}>FACEBOOK QTV LỘC TRẦM CẢM</Link>
+                <br />
+                <Link to={`${URL_QTV}`}>FACEBOOK QTV PHẠM KHẢI</Link>
             </div>
         </>
     )

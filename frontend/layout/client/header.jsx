@@ -23,6 +23,7 @@ function Header() {
     const [check, setCheck] = useState(true)
     const [click, setClick] = useState(false)
     const host = import.meta.env.VITE_API_URL_BACKEND;
+    const URL_FRONTEND = import.meta.env.VITE_API_URL_FRONTEND;
     function handdleLogin() {
         navigate(`/dangnhap`)
     }
@@ -80,7 +81,7 @@ function Header() {
                         <div className="inner-wrap">
                             <div className="col-1">
                                 <div className="logo">
-                                    <img src="https://e7.pngegg.com/pngimages/779/61/png-clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.png" alt="" />
+                                   <Link to={`${URL_FRONTEND}`}> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" alt="" /></Link>
                                 </div>
                             </div>
                             <div className="col-2 position">
