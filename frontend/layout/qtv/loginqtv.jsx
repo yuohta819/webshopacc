@@ -26,7 +26,6 @@ function LoginQTV() {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data == "fail") {
                     toast.warning("Đăng nhập thất bại! ", {
                         position: "top-right",
