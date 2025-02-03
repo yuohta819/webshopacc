@@ -17,6 +17,7 @@ const hashPassword = async (password) => {
 module.exports.Tongquan = async (req, res) => {
     try {
         const data = await Bill.find({})
+        console.log(data)
         res.json(data)
     } catch (error) {
         res.json({

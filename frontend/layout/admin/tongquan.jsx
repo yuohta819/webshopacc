@@ -20,6 +20,7 @@ function Tongquan() {
         setBill(newData)
       })
   }, [data, deleted])
+  console.log(bill)
   function handdleClick(e) {
      const local = `${host}/${admin}/change-status/${e.currentTarget.value}/${e.currentTarget.title}/Robux`
      
@@ -60,6 +61,11 @@ function Tongquan() {
       dataIndex: 'count',
       key: 'count',
       render: (text, record, index) => <a>{index+1}</a>,
+    },
+    {
+      title: 'Mã Đặt Hàng',
+      dataIndex: '_id',
+      key: '_id',
     },
     {
       title: 'Thành Tiền',

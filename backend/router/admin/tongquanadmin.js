@@ -7,7 +7,6 @@ const middlewave = require("../../middlewave/admin")
 route.get("/bill", middlewave.ADMIN ,Controller.Tongquan)
 // End Gamepass
 
-
 // [GET] Change-status
 route.get("/change-status/:status/:id", Controller.ChangeStatus)
 // End Change-Status
