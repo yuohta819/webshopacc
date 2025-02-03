@@ -137,6 +137,7 @@ function Napthe() {
                 </Form.Item>
                 <Form.Item name="link" label="Lưu ý:" >
                     <ul>
+                        <li>Nạp qua thẻ cào sẽ bị chiết khấu ví dụ 10k = 8k vào tài khoản. Chiết khấu sẽ tùy vào bên thứ 3</li>
                         <li>Khi nhập xong nhấn nút đã nạp bên dưới</li>
                         <li>Không chấp nhận nhập sai mệnh giá thẻ </li>
                         <li>Nếu có thắc mắc liên hệ facebook hoặc zalo dưới góc phải</li>
