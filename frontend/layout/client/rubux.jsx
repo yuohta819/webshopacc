@@ -85,7 +85,7 @@ const RobuxGamepass = () => {
                             </Col>
                             <Col span={12}>
                                 <Text>Hệ số:</Text>
-                                <Input value={exchangeRate} disabled />
+                                <Input value="75" disabled />
                             </Col>
                         </Row>
                     </Card>
