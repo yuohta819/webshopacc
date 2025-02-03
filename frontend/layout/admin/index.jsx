@@ -12,6 +12,8 @@ import {
 import Tongquan from './tongquan';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { BiSolidCategory } from "react-icons/bi";
+import { GiMoneyStack } from "react-icons/gi";
 const { Header, Content, Footer, Sider } = Layout;
 
 
@@ -42,27 +44,42 @@ const Adminn = () => {
           <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
             <div className="demo-logo-vertical" />
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-              <Menu.Item key="1" icon={<PieChartOutlined />}>
+              
+              <Menu.Item key="sub1" icon={<PieChartOutlined />}>
                 <Link to={`/${admin}/tongquan`}>Tổng quan</Link>
+              
               </Menu.Item>
-              <Menu.SubMenu key="sub1" icon={<UserOutlined />} title="Tài Khoản">
-                <Menu.Item key="2" icon={<MdManageAccounts />}>
+              <Menu.SubMenu key="sub2" icon={<UserOutlined />} title="Tài Khoản">
+                <Menu.Item key="1" icon={<MdManageAccounts />}>
                   <Link to={`/${admin}/createadmin`}>Tài Khoản Admin</Link>
                 </Menu.Item>
-                <Menu.Item key="3" icon={<MdOutlineManageAccounts />}>
+                <Menu.Item key="2" icon={<MdOutlineManageAccounts />}>
                   <Link to={`/${admin}/createqtv`}>Tài Khoản QTV</Link>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<MdOutlineManageAccounts />}>
+                  <Link >Tài Khoản Khách Hàng</Link>
+                </Menu.Item>
+              </Menu.SubMenu>
+             
+              <Menu.SubMenu key="sub3" icon={< BiSolidCategory />} title="Sản Phẩm">
+                <Menu.Item key="4" icon={<GiMoneyStack />}>
+                  <Link to={`/${admin}/changerobux`}>Rubux</Link>
+                </Menu.Item>
+                <Menu.Item key="5" icon={<MdOutlineManageAccounts />}>
+                  <Link to={`/${admin}/bloxfruit`}>Blox Fruit</Link>
+                </Menu.Item>
+                <Menu.Item key="6" icon={<MdOutlineManageAccounts />}>
                   <Link to={`/${admin}/createqtv`}>Tài Khoản Khách Hàng</Link>
                 </Menu.Item>
               </Menu.SubMenu>
-              <Menu.SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
+             
+              {/* <Menu.SubMenu key="sub4" icon={<TeamOutlined />} title="Team">
                 <Menu.Item key="6">Team 1</Menu.Item>
                 <Menu.Item key="8">Team 2</Menu.Item>
               </Menu.SubMenu>
               <Menu.Item key="9" icon={<FileOutlined />}>
                 Files
-              </Menu.Item>
+              </Menu.Item> */}
             </Menu>
           </Sider>
           <Layout>

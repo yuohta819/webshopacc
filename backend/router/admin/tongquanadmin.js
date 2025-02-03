@@ -27,5 +27,7 @@ route.post("/createadmin", Controller.CreateAdmin)
 route.post("/login", Controller.LoginAdmin)
 // End Login Admin
 
-
+// [POST] Change Bloxfruit
+route.post("/bloxfruit", Controller.Bloxfruit)
+// End Change Bloxfruit
 module.exports = route

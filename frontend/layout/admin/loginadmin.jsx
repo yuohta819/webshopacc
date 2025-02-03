@@ -21,7 +21,6 @@ function LoginAdmin() {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data == "Error") {
                     toast.warning("Đăng nhập thất bại! ", {
                         position: "top-right",

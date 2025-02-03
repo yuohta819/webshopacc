@@ -141,3 +141,8 @@ module.exports.LoginAdmin = async (req, res) => {
 }
 // End Login Admin
 
+// [POST] Change Bloxfruit
+module.exports.Bloxfruit = async (req, res) => {
+    
+}
+// End Change Bloxfruit

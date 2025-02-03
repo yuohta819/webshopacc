@@ -3,12 +3,7 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify";
-const onFinish = (values) => {
-    console.log('Success:', values);
-};
-const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-};
+
 function LoginQTV() {
     const [data, setData] = useState("")
     const host = import.meta.env.VITE_API_URL_BACKEND
@@ -93,9 +88,6 @@ function LoginQTV() {
                     initialValues={{
                         remember: true,
                     }}
-                    onFinish={onFinish}
-                    onFinishFailed={onFinishFailed}
-                    autoComplete="off"
                 >
                     <Form.Item
                         label="Username"

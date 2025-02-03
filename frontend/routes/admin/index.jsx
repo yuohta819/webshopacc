@@ -6,6 +6,8 @@ import CreateQTV from "../../layout/admin/createQTV"
 import LoginAdmin from "../../layout/admin/loginadmin"
 import CreateAdmin from "../../layout/admin/createAdmin"
 import CheckAdmin from "../../models/admin/index.model"
+import Robux from "../../layout/admin/Rubux"
+import Bloxfruit from "../../layout/admin/Bloxfruit"
 function Admin() {
     const ADMIN = import.meta.env.VITE_ADMIN
     return (
@@ -18,6 +20,8 @@ function Admin() {
                             <Route path="tongquan" element={<Tongquan />} />
                             <Route path="createqtv" element={<CreateQTV />} />
                             <Route path="createadmin" element={<CreateAdmin/>} />
+                            <Route path="changerobux" element={<Robux/>} />
+                            <Route path="bloxfruit" element={<Bloxfruit/>} />
                         </Route>
                     </Route>
                 </Routes>
