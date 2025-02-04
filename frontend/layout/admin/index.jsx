@@ -14,6 +14,7 @@ import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { BiSolidCategory } from "react-icons/bi";
 import { GiMoneyStack } from "react-icons/gi";
+import { GiFruiting } from "react-icons/gi";
 const { Header, Content, Footer, Sider } = Layout;
 
 
@@ -65,11 +66,11 @@ const Adminn = () => {
                 <Menu.Item key="4" icon={<GiMoneyStack />}>
                   <Link to={`/${admin}/changerobux`}>Rubux</Link>
                 </Menu.Item>
-                <Menu.Item key="5" icon={<MdOutlineManageAccounts />}>
+                <Menu.Item key="5" icon={<GiFruiting />}>
                   <Link to={`/${admin}/bloxfruit`}>Blox Fruit</Link>
                 </Menu.Item>
                 <Menu.Item key="6" icon={<MdOutlineManageAccounts />}>
-                  <Link to={`/${admin}/createqtv`}>Tài Khoản Khách Hàng</Link>
+                  <Link to={`/${admin}/createqtv`}>Liên Quân</Link>
                 </Menu.Item>
               </Menu.SubMenu>
              

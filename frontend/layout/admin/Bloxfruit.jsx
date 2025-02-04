@@ -5,6 +5,7 @@ import { Col, Row } from 'antd';
 import { Select } from 'antd';
 import { useState } from 'react';
 import ChangeBloxfruit from './ChangeBloxFruit';
+import CategoryRobux from './categoryRobux';
 function Bloxfruit() {
     const [data, setData] = useState([])
     const host = import.meta.env.VITE_API_URL_BACKEND
@@ -76,6 +77,7 @@ function Bloxfruit() {
             </Form>
         </Col>
     </Row>
+    <CategoryRobux />
 </>
     )
 } 

@@ -45,4 +45,8 @@ route.get("/bills",Controller.Bills )
 // [GET] Users
 route.post("/detail/infor", Controller.InforUsers)
 // End Users
+
+// [GET] Users
+route.get("/robux", Controller.Robux)
+// End Users
 module.exports = route

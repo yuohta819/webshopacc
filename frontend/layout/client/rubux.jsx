@@ -3,22 +3,21 @@ import { Input, Card, Button, Typography, Row, Col } from "antd";
 import "../../public/css/Hearder.css"
 import { ToastContainer, toast } from "react-toastify";
 import { RiMessengerFill } from "react-icons/ri";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SideBar from "./siderbar";
 const { Title, Text } = Typography;
 const RobuxGamepass = () => {
     const [amount, setAmount] = useState(10000);
-    const exchangeRate = import.meta.env.VITE_RUBUX
     const host = import.meta.env.VITE_API_URL_BACKEND;
-    const robuxPrice = (amount / 1000) * exchangeRate;
     const link = import.meta.env.VITE_FACEBOOK
     const [data, setData] = useState("")
+    const [robux, setRobux] = useState(0)
+    const [rubuxprice, setRobuxprice] = useState(0)
     const navigate = useNavigate()
     const token = sessionStorage.getItem("token-account")
     function handdleSubmit(e) {
         e.preventDefault()
-        const action = `${host}/thanhtoan/Robux/${robuxPrice}`
-        console.log(action)
+        const action = `${host}/thanhtoan/Robux/${robux}`
         fetch(action, {
             method: "POST",
             headers: {
@@ -53,6 +52,18 @@ const RobuxGamepass = () => {
                 }
             })
     }
+    useEffect(() => {
+        fetch(`${host}/robux`)
+            .then(res => res.json())
+            .then(data => {
+                data.map((item, index) => {
+                    setRobuxprice(parseInt(item.robux))
+                })
+            })
+    }, [])
+    useEffect(() => {
+        setRobux((amount / 1000) * rubuxprice)
+    }, [data])
     function handdleChange(e) {
         setData({
             ...data,
@@ -83,9 +94,9 @@ const RobuxGamepass = () => {
                                     Số tiền thanh toán phải từ <b>10,000đ</b> đến <b>500,000đ</b>
                                 </Text>
                             </Col>
-                            <Col span={12}>
+                            <Col span={12} >
                                 <Text>Hệ số:</Text>
-                                <Input value={exchangeRate} disabled />
+                                <Input value={rubuxprice} disabled />
                             </Col>
                         </Row>
                     </Card>
@@ -102,7 +113,7 @@ const RobuxGamepass = () => {
                     {/* Báo giá và thanh toán */}
                     <Card style={{ textAlign: "right" }} onChange={handdleChange}>
                         <Text style={{ fontSize: "16px" }}>
-                            Báo giá: <span style={{ color: "red", fontWeight: "bold" }} >{robuxPrice} Robux</span>
+                            Báo giá: <span style={{ color: "red", fontWeight: "bold" }} >{robux} Robux</span>
                         </Text>
                         <div style={{ marginTop: 10 }}>
                             <Button htmlType="submit">Thanh Toán</Button>

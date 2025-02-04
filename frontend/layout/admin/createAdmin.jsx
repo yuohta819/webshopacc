@@ -2,12 +2,7 @@ import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
-const onFinish = (values) => {
-    console.log('Success:', values);
-};
-const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-};
+
 function CreateAdmin() {
     const admin = import.meta.env.VITE_ADMIN
     const [data, setData] = useState("")
@@ -81,9 +76,6 @@ function CreateAdmin() {
                 initialValues={{
                     remember: true,
                 }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
             > 
             <h2 style={{
                 marginLeft: 211

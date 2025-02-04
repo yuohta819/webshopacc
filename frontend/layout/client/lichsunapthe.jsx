@@ -70,7 +70,7 @@ function HistoricNapThe() {
             dataIndex: 'active',
             render: (active, record) => (
               <Button  value={active} title={record.name}  type={active ? "primary" : "default"} danger={!active} > 
-                {active  ? "Đã nhận đơn" : "Chờ nhận đơn"}
+                {active  ? "Đã Xác Nhận" : "Chờ Xác Nhận"}
               </Button>
             ),
           },

@@ -3,12 +3,12 @@ import { SettingOutlined } from '@ant-design/icons';
 import { Button, Cascader, InputNumber, Select, Space, Form } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-
+import HeaderRun from './headerrun';
 function Robux() {
     const [data, setData] = useState([])
     const host = import.meta.env.VITE_API_URL_BACKEND
     const admin = import.meta.env.VITE_ADMIN
-    const action = `${host}/${admin}/bloxfruit`
+    const action = `${host}/${admin}/changerobux`
     function handdleSubmit(e) {
         e.preventDefault()
         fetch(action, {
@@ -51,13 +51,15 @@ function Robux() {
     }
     return (
         <>
-            <Form onSubmitCapture={handdleSubmit}>
+            <Form onSubmitCapture={handdleSubmit} style={{marginBottom: "50px"}}>
                 <h2>Cập nhật giá Robux</h2>
                 <Space direction="vertical">
                     <InputNumber addonBefore="+" addonAfter="$" placeholder='Giá Robux' onChange={(value) => handdleChange('robux', value)} />
                     <button type="submit" className="btn btn-primary">Cập Nhật</button>
                 </Space>
             </Form>
+            <h2>Cập nhật Thanh Ngang</h2>
+            <HeaderRun />
         </>
     )
 }

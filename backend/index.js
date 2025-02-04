@@ -29,6 +29,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.urlencoded({ extended: true }))
 
+
 routeClient(app)
 routeAdmin(app)
 routeQTV(app)

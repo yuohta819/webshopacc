@@ -5,6 +5,7 @@ const Account = require("../../api/dataproducts")
 const Money = require("../../api/datamoney")
 const SECRETKEY = process.env.SECRETKEY
 const Bill = require("../../api/databills")
+const Changerobux = require("../../api/dataChangeRobux")
 
 // Ma hoa mat khau 
 const hashPassword = async (password) => {
@@ -278,3 +279,9 @@ module.exports.InforUsers = async (req, res) => {
 }
 // End Users
 
+// [GET] Robux
+module.exports.Robux = async (req, res) => {
+    const data = await Changerobux.find({})
+    res.json(data)
+}
+// End Robux

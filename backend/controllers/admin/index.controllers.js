@@ -6,6 +6,7 @@ const AccountQTV = require("../../api/dataaccountqtv")
 const AccountADMIN = require("../../api/dataaccountadmin")
 const Account = require("../../api/dataproducts")
 const Bloxfruit = require("../../api/dataCategory")
+const Changerobux = require("../../api/dataChangeRobux")
 const SECRETKEY = process.env.SECRETKEY
 // Ma hoa mat khau 
 const hashPassword = async (password) => {
@@ -176,12 +177,57 @@ module.exports.CategoryBloxfruit = async (req, res) => {
 }
 // End Find Category
 module.exports.ChangeCategory = async (req, res) => {
-    const type = req.params.type
-    const price = req.params.price
-    await Bloxfruit.updateOne({
-        type: type
-    }, {
-        price: price
-    })
+    try {
+        const type = req.params.type
+        const price = req.params.price
+        await Bloxfruit.updateOne({
+            type: type
+        }, {
+            price: price
+        })
+        res.json("success")
+    } catch (error) {
+        res.json("Error")
+    }
 }
 // [POST] Change Category
+
+// [POST] Change Robux
+module.exports.ChangeRobux = async (req, res) => {
+    try {
+        if (req.body.robux) {
+            await Changerobux.updateOne({}, {
+                robux: req.body.robux
+            })
+        } else if (req.body.mar) {
+            await Changerobux.updateOne({}, {
+                mar: req.body.mar
+            })
+        }
+    } catch (error) {
+        res.json("error")
+    }
+}
+// End Change Robux
+
+// [POST] Deleted
+module.exports.DeleteBloxfruit = async (req, res) => {
+    try {
+        const id = req.params.id
+        console.log(id)
+        await Bloxfruit.deleteOne({
+            _id: id
+        }, {
+            deleted: true
+        })
+    } catch (error) {
+        res.json("error")
+    }
+}
+// End Deleted
+
+// [POST] Imange Lien Quan
+module.exports.ImageLienQuan = async (req, res) => {
+
+}
+// End Imange Lien Quan

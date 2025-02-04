@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import TrangChu from "./Trangchu";
 import React from 'react';
 import { Col, Divider, Row } from 'antd';
+import MarqueeText from "./headerrun";
 function Header() {
     const navigate = useNavigate()
     const [data, setData] = useState("")
@@ -193,6 +194,7 @@ function Header() {
                     </div>
                 </div>
             </div >
+            <MarqueeText />
             <Outlet />
 
         </>
