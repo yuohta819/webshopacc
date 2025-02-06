@@ -12,7 +12,9 @@ const items = [
     { key: '1', label: <Link to={`/${QTV}/thecao`}>Thẻ Cào</Link> },
     { key: '2', label: <Link to={`/${QTV}/atm`}>ATM</Link> },
     { key: '3', label: <Link to={`/${QTV}/rubux`}>Robux</Link> },
-    { key: '4', label: 'Blox Fruit' },
+    { key: '5', label: <Link to={`/${QTV}/caythue`}>Blox Fruit</Link> },
+    { key: '6', label: <Link to={`/${QTV}/lienquan`}>Liên Quân</Link> },
+    { key: '7', label: <Link to={`/${QTV}/freefire`}>Free Fire</Link> },
   ];
 const Dashboard = () => {
   const location = useLocation()

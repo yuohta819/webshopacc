@@ -6,7 +6,7 @@ function Bill() {
   const host = import.meta.env.VITE_API_URL_BACKEND;
   const qtv = import.meta.env.VITE_QTV;
   const [bill, setBill] = useState([])
-  const action = `${host}/${qtv}/bill`
+  const action = `${host}/${qtv}/bill/Robux`
   const [data, setData] = useState(null)
   const [deleted, setDeleted] = useState(null)
   const token = sessionStorage.getItem("token-Accountqtv")

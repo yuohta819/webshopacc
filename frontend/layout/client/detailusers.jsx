@@ -21,7 +21,6 @@ const Deatil = () => {
   return (
     <div className="box" style={{
       marginTop: 25,
-      height: '100vh'
     }}>
       <Layout>
         <Sider
@@ -52,7 +51,7 @@ const Deatil = () => {
                 borderRadius: borderRadiusLG,
               }}
             >
-              <Outlet />
+               <Outlet />
             </div>
           </Content>
           <Footer
@@ -64,7 +63,9 @@ const Deatil = () => {
           </Footer>
         </Layout>
       </Layout>
+     
     </div>
+    
   );
 };
 export default Deatil;

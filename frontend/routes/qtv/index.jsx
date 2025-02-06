@@ -10,6 +10,10 @@ import Bill from "../../layout/qtv/bill"
 import ATM from "../../layout/qtv/atm"
 import AccoutQTV from "../../layout/qtv/accountqtv"
 import InforQTV from "../../layout/qtv/inforQTV"
+import BloxFruit from "../../layout/qtv/bloxfruit"
+import CayThue from "../../layout/qtv/caythue"
+import LienQuan from "../../layout/qtv/lienquan"
+import FreeFire from "../../layout/qtv/freefire"
 function QTV() {
     const QTV = import.meta.env.VITE_QTV
     return (
@@ -23,6 +27,9 @@ function QTV() {
                             <Route path="thecao" element={<TheCao />} />
                             <Route path="atm" element={<ATM />} />
                             <Route path="account" element={<InforQTV />} />
+                            <Route path="caythue" element={<BloxFruit />} />
+                            <Route path="lienquan" element={<LienQuan />} />
+                            <Route path="freefire" element={<FreeFire />} />
                         </Route>
                     </Route>
                 </Routes>

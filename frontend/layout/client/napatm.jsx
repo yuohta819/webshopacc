@@ -86,11 +86,11 @@ function NapATM() {
                                             <p>Loại ngân hàng:
                                                 <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-VietinBank-CTG-Ori.png" alt="" />
                                             </p>
-                                            <p>VietinBank</p>
+                                            <p>MVB</p>
                                         </div>
                                         <div className="content-2 content">
                                             <p>Số tài khoản:</p>
-                                            <p>105879241100</p>
+                                            <p>123213</p>
                                         </div>
                                         <div className="content-2 content" >
                                             <p style={{ marginBottom: 0 }}>Số tiền:</p>
@@ -134,7 +134,6 @@ function NapATM() {
                                             <p>VietinBank</p>
                                         </div>
                                         <div className="content-2 content img">
-                                            <img src="/img/z6274174826872_381560d28e9c3f9340fd3d44b50a4a42.jpg" alt="" />
                                         </div>
                                         <div className="content-2 content">
                                             <p>Tên tài khoản: </p>
@@ -180,11 +179,6 @@ function NapATM() {
                     <RiMessengerFill />
                 </div>
             </Link>
-            <SideBar />
-            <div className="selection-end">
-                <p>© Copyright 2023 - Privacy Policy - Terms of Service</p>
-                <p>Operated by Loc Tram Cam, All Rights Reserved</p>
-            </div>
             <ToastContainer />
         </>
     )

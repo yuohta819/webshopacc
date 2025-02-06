@@ -13,6 +13,7 @@ const billShema = new mongoose.Schema({
     count: Number,
     work: String,
     connect: String,
+    content: [],
     first: {
         type: String,
         default: "0"

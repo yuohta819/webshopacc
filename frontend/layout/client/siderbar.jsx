@@ -5,7 +5,7 @@ function SideBar() {
     return (
         <div
             className="sidebar-container"
-            style={{ backgroundColor: "#f4f6fa", padding: "65px 40px", marginTop: "70px" }}
+            style={{ backgroundColor: "#f4f6fa", padding: "65px 124px" }}
         >
             <div className="sidebar-end">
                 <Row gutter={16} style={{ justifyContent: 'space-around' }}>

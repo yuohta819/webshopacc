@@ -9,6 +9,7 @@ const AccountShema = new mongoose.Schema({
     account: String,
     password: String,
     token: String,
+    Link: String,
     totalbill: {
         type: Number,
         default: 0

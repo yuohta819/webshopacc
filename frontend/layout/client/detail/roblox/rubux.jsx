@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Input, Card, Button, Typography, Row, Col } from "antd";
-import "../../public/css/Hearder.css"
+import "../../../../public/css/Hearder.css"
 import { ToastContainer, toast } from "react-toastify";
 import { RiMessengerFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
-import SideBar from "./siderbar";
 const { Title, Text } = Typography;
 const RobuxGamepass = () => {
     const [amount, setAmount] = useState(10000);
@@ -126,11 +125,6 @@ const RobuxGamepass = () => {
                     <RiMessengerFill />
                 </div>
             </Link>
-            <SideBar />
-            <div className="selection-end">
-                <p>© Copyright 2023 - Privacy Policy - Terms of Service</p>
-                <p>Operated by Lộc Trầm Cảm & Phạm Khải, All Rights Reserved</p>
-            </div>
             <ToastContainer />
         </>
 

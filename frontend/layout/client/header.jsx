@@ -13,10 +13,13 @@ import { IoIdCardOutline } from "react-icons/io5";
 import { BsShopWindow } from "react-icons/bs";
 import { AiOutlineShop } from "react-icons/ai";
 import { RiBillLine } from "react-icons/ri";
+import { RiMessengerFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import TrangChu from "./Trangchu";
 import React from 'react';
 import { Col, Divider, Row } from 'antd';
+import SideBar from "./siderbar";
+import Result from "./result";
 import MarqueeText from "./headerrun";
 function Header() {
     const navigate = useNavigate()
@@ -24,6 +27,7 @@ function Header() {
     const [check, setCheck] = useState(true)
     const [click, setClick] = useState(false)
     const host = import.meta.env.VITE_API_URL_BACKEND;
+    const link = import.meta.env.VITE_FACEBOOK_LOC
     const URL_FRONTEND = import.meta.env.VITE_API_URL_FRONTEND;
     function handdleLogin() {
         navigate(`/dangnhap`)
@@ -82,7 +86,7 @@ function Header() {
                         <div className="inner-wrap">
                             <div className="col-1">
                                 <div className="logo">
-                                   <Link to={`${URL_FRONTEND}`}> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" alt="" /></Link>
+                                    <Link to={`${URL_FRONTEND}`}> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" alt="" /></Link>
                                 </div>
                             </div>
                             <div className="col-2 position">
@@ -95,7 +99,7 @@ function Header() {
                             </div>
                             {click ? (
                                 <div className="inner-box" onMouseLeave={handdleLeave} >
-                                    <div className="box" style={{borderRadius: '0 0 10px 10px'}}>
+                                    <div className="box" style={{ borderRadius: '0 0 10px 10px' }}>
                                         <button>
                                             <Link to="/">
                                                 <div className="content-1">
@@ -132,7 +136,7 @@ function Header() {
                                                 <span>Dịch vụ</span>
                                             </div>
                                         </button>
-                                        <button style={{padding: '20'}}>
+                                        <button style={{ padding: '20' }}>
                                             <div className="content-1">
                                                 <div className="icon"><RiBillLine /></div>
                                                 <span>Tin tức</span>
@@ -152,12 +156,12 @@ function Header() {
                                     <button type="button" className="btn btn-primary" onClick={handdleCheck}>Nạp tiền</button>
                                 </div>
                             </div>
-                            <div className="col-1" style={{width: 50}}>
+                            <div className="col-1" style={{ width: 50 }}>
                                 <div className="beel Carts" >
                                     <button><CiBellOn /></button>
                                 </div>
                             </div>
-                            <div className="col-1" style={{width: 50}}>
+                            <div className="col-1" style={{ width: 50 }}>
                                 <div className="beel Carts" >
                                     <button><PiShoppingCartSimpleBold /></button>
                                 </div>
@@ -195,8 +199,15 @@ function Header() {
                 </div>
             </div >
             <MarqueeText />
-            <Outlet />
+            <Link to={`${link}`}>
+                <div className="selection-5" style={{ zIndex: '4' }}>
+                    <RiMessengerFill />
+                </div>
+            </Link>
 
+            <Outlet />
+            <SideBar />
+            <Result />
         </>
     )
 }

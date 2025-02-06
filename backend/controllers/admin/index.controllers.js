@@ -7,6 +7,12 @@ const AccountADMIN = require("../../api/dataaccountadmin")
 const Account = require("../../api/dataproducts")
 const Bloxfruit = require("../../api/dataCategory")
 const Changerobux = require("../../api/dataChangeRobux")
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier')
+const Lienquan = require("../../api/dataLienquan")
+const CreateTongQuan = require("../../api/dataCategoryTongQuan")
+const Freefire = require("../../api/dataFreefire")
+const Lienminh = require("../../api/dataLienMinh")
 const SECRETKEY = process.env.SECRETKEY
 // Ma hoa mat khau 
 const hashPassword = async (password) => {
@@ -214,7 +220,6 @@ module.exports.ChangeRobux = async (req, res) => {
 module.exports.DeleteBloxfruit = async (req, res) => {
     try {
         const id = req.params.id
-        console.log(id)
         await Bloxfruit.deleteOne({
             _id: id
         }, {
@@ -227,7 +232,249 @@ module.exports.DeleteBloxfruit = async (req, res) => {
 // End Deleted
 
 // [POST] Imange Lien Quan
+const uploadToCloudinary = (buffer) => {
+    return new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+            { folder: 'uploads' }, // Tên thư mục trên Cloudinary
+            (error, result) => {
+                if (error) reject(error);
+                else resolve(result.secure_url); // URL ảnh sau khi tải lên Cloudinary
+            }
+        );
+        streamifier.createReadStream(buffer).pipe(stream);
+    });
+};
 module.exports.ImageLienQuan = async (req, res) => {
+    try {
+        const files = req.files;
+        const uploadPromises = files.map(file => uploadToCloudinary(file.buffer));
+        const urls = await Promise.all(uploadPromises);
+        const data = await Lienquan({
+            title: req.params.title,
+            img_1: urls
+        })
+        data.save()
+        //   res.json({ message: 'Upload thành công', urls });
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi khi tải lên ảnh' });
+    }
+};
 
-}
 // End Imange Lien Quan
+
+// [POST] Create Tong Quan
+module.exports.CreateTongQuan = async (req, res) => {
+    try {
+        const upload = await uploadToCloudinary(req.file.buffer)
+        const urls = await Promise.all(upload);
+        const data = await CreateTongQuan({
+            img: upload,
+            category: req.params.category,
+            name: req.params.title
+        })
+        data.save()
+    } catch (error) {
+        res.json("Error")
+    }
+}
+// End Create Tong Quan
+
+// [POST] Lien Quan
+module.exports.Lienquan = async (req, res) => {
+    try {
+        const files = req.files
+        const count = await Lienquan.countDocuments()
+        const uploadPromises = files.map(file => uploadToCloudinary(file.buffer))
+        const urls = await Promise.all(uploadPromises)
+        const data = await Lienquan({
+            ...req.body,
+            id: count + 1,
+            img_1: urls
+        })
+        data.save()
+        //   res.json({ message: 'Upload thành công', urls });
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi khi tải lên ảnh' });
+    }
+}
+// End Lien quan
+
+module.exports.Freefire = async (req, res) => {
+    try {
+        const files = req.files
+        const count = await Freefire.countDocuments()
+        const uploadPromises = files.map(file => uploadToCloudinary(file.buffer))
+        const urls = await Promise.all(uploadPromises)
+        const data = await Freefire({
+            ...req.body,
+            id: count + 1,
+            img_1: urls
+        })
+        data.save()
+        //   res.json({ message: 'Upload thành công', urls });
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi khi tải lên ảnh' });
+    }
+}
+// End Lien quan
+
+// [POST] Update Bills
+module.exports.UpdateBills = async (req, res) => {
+    try {
+        let data, total;
+        if (req.params.total.length < 6) {
+            total = Math.round(parseFloat(req.params.total))*1000
+        } else {
+            total = Math.round(parseFloat(req.params.total))*1000000
+        }
+        if (req.params.work == "Lienquan") {
+            data = await Lienquan.find({
+                id: parseInt(req.params.id)
+            })
+        } else if (req.params.work == "freefire") {
+            data = await Freefire.find({
+                id: parseInt(req.params.id)
+            })
+        }
+        const decoded = jwt.verify(req.headers.authorization, SECRETKEY)
+        const users = await Account.find({
+            account: decoded.account
+        })
+        if (users[0].totalprice < parseInt(total)) {
+            return res.json("Noprice")
+        } else if (users[0].totalprice >= parseInt(total)) {
+            const pricetmp = (users[0].totalprice - parseInt(total))
+            await Account.updateOne({
+                account: decoded.account
+            }, {
+                totalprice: pricetmp
+            })
+        }
+        const bill = await Bill({
+            name: users[0].name,
+            taikhoan: users[0].account,
+            price: data[0].price,
+            token: req.headers.authorization,
+            work: req.params.work,
+
+        })
+        bill.save()
+        res.json("success")
+    } catch (error) {
+        res.json("Error")
+    }
+}
+// End Update Bills
+
+// [POST] Update Anime Defenders
+module.exports.AnimeDefenders = async (req, res) => {
+    try {
+        const files = req.files
+        const uploadPromises = files.map(file => uploadToCloudinary(file.buffer))
+        const urls = await Promise.all(uploadPromises)
+        const data = await Bloxfruit({
+            ...req.body,
+            img: urls
+        })
+        
+        data.save()
+        //   res.json({ message: 'Upload thành công', urls });
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi khi tải lên ảnh' });
+    }
+}
+// End Update Anime Defenders
+
+// [POST] Update Robux VNG
+module.exports.RobuxReal = async (req, res) => {
+    try {
+        const uploadPromises = files.map(file => uploadToCloudinary(file.buffer))
+        const urls = await Promise.all(uploadPromises)
+        const data = await Bloxfruit({
+            ...req.body,
+            img: urls
+        })
+        data.save()
+        //   res.json({ message: 'Upload thành công', urls });
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi khi tải lên ảnh' });
+    }
+}
+// End Update Robux VNG
+
+// [POST] Fruit
+module.exports.Fruit = async (req, res) => {
+    try {
+        const files = req.files
+        const uploadPromises = files.map(file => uploadToCloudinary(file.buffer))
+        const urls = await Promise.all(uploadPromises)
+        const data = await Bloxfruit({
+            ...req.body,
+            imgFruit: urls
+        })
+        
+        data.save()
+        //   res.json({ message: 'Upload thành công', urls });
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi khi tải lên ảnh' });
+    }
+}
+// End Fruit
+
+// [POST] Fruit
+module.exports.Toilet = async (req, res) => {
+    try {
+        const files = req.files
+        const uploadPromises = files.map(file => uploadToCloudinary(file.buffer))
+        const urls = await Promise.all(uploadPromises)
+        const data = await Bloxfruit({
+            ...req.body,
+            imgToilet: urls
+        })
+        
+        data.save()
+        //   res.json({ message: 'Upload thành công', urls });
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi khi tải lên ảnh' });
+    }
+}
+// End Fruit
+
+// [POST] Do Thi
+module.exports.Dothi = async (req, res) => {
+    try {
+        let object =[]
+        const data = await CreateTongQuan.find({
+            name: "Roblox"
+        })
+        let stock=0
+        data.forEach((item) => {
+            stock = stock + parseInt(item.stock)
+        })
+        const data1 = await CreateTongQuan.find({
+            name: "freefire"
+        })
+        let stock1=0
+        data1.forEach((item) => {
+            stock1 = stock1 + parseInt(item.stock)
+        })
+
+        const data2 = await CreateTongQuan.find({
+            name: "Liqi"
+        })
+        let stock2=0
+        data2.forEach((item) => {
+            stock2 = stock2 + parseInt(item.stock)
+        })
+
+
+        object.push({
+            Roblox: stock,
+            FreeFire: stock1,
+            Lienquan: stock2
+        })
+       res.json(object)
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi khi tải lên ảnh' });
+    }
+}

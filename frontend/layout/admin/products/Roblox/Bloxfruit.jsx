@@ -2,10 +2,14 @@ import React from 'react';
 import { Flex, Input, Form } from 'antd';
 const { TextArea } = Input;
 import { Col, Row } from 'antd';
-import { Select } from 'antd';
 import { useState } from 'react';
-import ChangeBloxfruit from './ChangeBloxFruit';
-import CategoryRobux from './categoryRobux';
+import ChangeBloxfruit from "../ChangeBloxFruit"
+import CategoryRobux from "../../categoryRobux"
+import Robux from "../Rubux"
+import AnimeDenders from './animedefenders';
+import RobuxReal from './robuxreal';
+import Fruit from './Fruit';
+import Toilet from './toilet';
 function Bloxfruit() {
     const [data, setData] = useState([])
     const host = import.meta.env.VITE_API_URL_BACKEND
@@ -52,6 +56,7 @@ function Bloxfruit() {
     }
     return (
         <>
+        <Robux />
     <h2 style={{ textAlign: 'center', marginBottom: "20px", marginTop: "24px" }}>Cập nhật Blox Fruit</h2>
     <Row style={{ justifyContent: "space-around" }}>
         <ChangeBloxfruit />
@@ -78,6 +83,10 @@ function Bloxfruit() {
         </Col>
     </Row>
     <CategoryRobux />
+    <AnimeDenders />
+    <RobuxReal />
+    <Fruit />
+    <Toilet />
 </>
     )
 } 

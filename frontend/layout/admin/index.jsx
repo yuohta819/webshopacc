@@ -17,14 +17,13 @@ import { GiMoneyStack } from "react-icons/gi";
 import { GiFruiting } from "react-icons/gi";
 const { Header, Content, Footer, Sider } = Layout;
 
-
 const Adminn = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   const admin = import.meta.env.VITE_ADMIN
-
+  const defaultSelectedKey = `/${admin}/tongquan`;
   return (
     <>
       <div className="selection-1">
@@ -44,7 +43,7 @@ const Adminn = () => {
         >
           <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
             <div className="demo-logo-vertical" />
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+            <Menu theme="dark" defaultSelectedKeys={[defaultSelectedKey]} mode="inline">
               
               <Menu.Item key="sub1" icon={<PieChartOutlined />}>
                 <Link to={`/${admin}/tongquan`}>Tổng quan</Link>
@@ -64,16 +63,30 @@ const Adminn = () => {
              
               <Menu.SubMenu key="sub3" icon={< BiSolidCategory />} title="Sản Phẩm">
                 <Menu.Item key="4" icon={<GiMoneyStack />}>
-                  <Link to={`/${admin}/changerobux`}>Rubux</Link>
+                  <Link to={`/${admin}/bloxfruit`}>Roblox</Link>
                 </Menu.Item>
-                <Menu.Item key="5" icon={<GiFruiting />}>
-                  <Link to={`/${admin}/bloxfruit`}>Blox Fruit</Link>
+                <Menu.Item key="5" icon={<MdOutlineManageAccounts />}>
+                  <Link to={`/${admin}/lienquan`}>Liên Quân Mobile</Link>
                 </Menu.Item>
                 <Menu.Item key="6" icon={<MdOutlineManageAccounts />}>
-                  <Link to={`/${admin}/createqtv`}>Liên Quân</Link>
+                  <Link to={`/${admin}/freefire`}>Free Fire</Link>
+                </Menu.Item>
+                <Menu.Item key="7" icon={<MdOutlineManageAccounts />}>
+                  <Link to={`/${admin}/lienminhhuyenthoai`}>Liên Minh Huyền Thoại</Link>
+                </Menu.Item>
+                <Menu.Item key="8" icon={<MdOutlineManageAccounts />}>
+                  <Link to={`/${admin}/lienquan`}>Genshin Impact</Link>
                 </Menu.Item>
               </Menu.SubMenu>
-             
+
+              <Menu.SubMenu key="sub4" icon={< BiSolidCategory />} title="Danh mục">
+                <Menu.Item key="9" icon={<GiMoneyStack />}>
+                  <Link to={`/${admin}/createcategory`}>Tạo danh mục mới</Link>
+                </Menu.Item>
+                <Menu.Item key="10" icon={<GiFruiting />}>
+                  <Link to={`/${admin}/editcategory`}>Sửa Danh Mục</Link>
+                </Menu.Item>
+              </Menu.SubMenu>
               {/* <Menu.SubMenu key="sub4" icon={<TeamOutlined />} title="Team">
                 <Menu.Item key="6">Team 1</Menu.Item>
                 <Menu.Item key="8">Team 2</Menu.Item>

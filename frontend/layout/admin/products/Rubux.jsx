@@ -51,14 +51,14 @@ function Robux() {
     }
     return (
         <>
-            <Form onSubmitCapture={handdleSubmit} style={{marginBottom: "50px"}}>
+            <Form onSubmitCapture={handdleSubmit} style={{marginBottom: "50px", textAlign: "center"}}>
                 <h2>Cập nhật giá Robux</h2>
                 <Space direction="vertical">
                     <InputNumber addonBefore="+" addonAfter="$" placeholder='Giá Robux' onChange={(value) => handdleChange('robux', value)} />
                     <button type="submit" className="btn btn-primary">Cập Nhật</button>
                 </Space>
             </Form>
-            <h2>Cập nhật Thanh Ngang</h2>
+            <h2 style={{textAlign: "center"}}>Cập nhật Thanh Ngang</h2>
             <HeaderRun />
         </>
     )

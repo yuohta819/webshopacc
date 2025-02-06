@@ -39,7 +39,25 @@ module.exports.Login = async (req, res) => {
 // [GET] Tong quan
 module.exports.Tongquan = async (req, res) => {
     try {
-        const data = await Bill.find({})
+        let data
+        if (req.params.id == "Robux") {
+            data = await Bill.find({
+                work: req.params.id
+            })
+        } else if (req.params.id == "Lienquan") {
+            data = await Bill.find({
+                work: req.params.id
+            })
+        } else if (req.params.id == "caythubloxfruit") {
+            data = await Bill.find({
+                work: req.params.id
+            })
+        }
+        else if (req.params.id == "freefire") {
+            data = await Bill.find({
+                work: req.params.id
+            })
+        }
         res.json(data)
     } catch (error) {
         res.json({
@@ -154,7 +172,7 @@ module.exports.UpdatePrice = async (req, res) => {
         const price = parseInt(update) + data[0].totalprice
         await AccountUser.updateOne({
             account: req.body.id,
-        },{
+        }, {
             totalprice: price
         })
         res.json("success")
@@ -179,7 +197,7 @@ module.exports.AccountQTV = async (req, res) => {
 // End Account QTV
 
 // [POST] Update count QTV
-module.exports.CountQTV= async (req, res) => {
+module.exports.CountQTV = async (req, res) => {
     const decoded = jwt.verify(req.headers.authorization, SECRETKEY)
     const price = parseInt(req.params.price)
     const data = await AccountQTV.find({
@@ -189,7 +207,7 @@ module.exports.CountQTV= async (req, res) => {
     const count = data[0].count + 1
     await AccountQTV.updateOne({
         account: decoded.account
-    },{
+    }, {
         total: total,
         count: count
     })

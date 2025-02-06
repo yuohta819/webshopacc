@@ -15,7 +15,7 @@ function CategoryRobux() {
       .then(data => {
         const newData = data.map((item) => ({
           ...item,
-          key: item.count || item.id, // Dùng count hoặc id làm key
+          key: item.count || item._id, // Dùng count hoặc id làm key
         }));
         setBill(newData)
       })
@@ -66,7 +66,7 @@ function CategoryRobux() {
   
     },
   ];
-  return <Table columns={columns} dataSource={bill} style={{marginTop: "50px"}}/>;
+  return <Table columns={columns} pagination={{pageSize: 5}} dataSource={bill} style={{marginTop: "50px"}}/>;
 }
 
 export default CategoryRobux;

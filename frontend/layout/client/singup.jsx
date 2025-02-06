@@ -12,7 +12,8 @@ function Singup() {
     const [data, setData] = useState("")
     const [result, setResult] = useState("error")
     const host = import.meta.env.VITE_API_URL_BACKEND;
-    const action = `${host}/signup`
+    const [check, setCheck] = useState("")
+    const action = `${host}/signup/${check}`
     const navigate = useNavigate()
     function handdleSubmit(e) {
         e.preventDefault()
@@ -57,6 +58,9 @@ function Singup() {
             [e.target.name]: e.target.value
         })
     }
+    function handdleCheck(e) {
+        setCheck(e.target.value)
+    }
     return (
         <>
             <div className="selection-1-login">
@@ -84,6 +88,10 @@ function Singup() {
                                     <div className="password">
                                         <CgPassword />
                                         <input type="password" placeholder="Mật Khẩu" name="pass" onChange={handdleChange} required />
+                                    </div>
+                                    <div className="password">
+                                        <CgPassword />
+                                        <input type="password" placeholder="Link FaceBook" name="link" onChange={handdleCheck} required />
                                     </div>
                                     <div className="login">
                                         <button type="submit" className="btn btn-primary">Đăng Kí</button>

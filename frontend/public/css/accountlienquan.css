@@ -1,0 +1,11 @@
+.selection-2 .ant-card-bordered {
+    margin: 20px 0 !important;
+    max-width: 1700px !important;
+    padding: 0 100px  !important;
+}
+.selection-2 .box .ant-card-bordered {
+    padding: 0 40px !important;
+}
+.selection-2 .ant-card {
+    text-align: left !important;
+}

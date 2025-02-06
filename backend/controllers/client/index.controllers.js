@@ -6,7 +6,10 @@ const Money = require("../../api/datamoney")
 const SECRETKEY = process.env.SECRETKEY
 const Bill = require("../../api/databills")
 const Changerobux = require("../../api/dataChangeRobux")
-
+const Categorytongquan = require('../../api/dataCategoryTongQuan')
+const Bloxfruit = require("../../api/dataCategory")
+const AccountLienquan = require("../../api/dataLienquan")
+const AccountFreeFire = require("../../api/dataFreefire")
 // Ma hoa mat khau 
 const hashPassword = async (password) => {
     const saltRounds = 10; // Độ mạnh của mã hóa
@@ -36,6 +39,7 @@ module.exports.Singup = async (req, res) => {
             nickname: req.body.nickname,
             account: req.body.account,
             password: password,
+            link: req.params.id,
             token: token
         })
         data.save()
@@ -81,7 +85,7 @@ module.exports.Users = async (req, res) => {
     try {
         const token = req.headers.authorization
         const decoded = jwt.verify(token, SECRETKEY)
-        
+
         if (decoded.exp < Math.floor(Date.now() / 1000)) {
             return res.json("error")
         }
@@ -145,6 +149,7 @@ module.exports.Napatm = async (req, res) => {
 // [POST] Thanh Toan
 module.exports.Thanhtoan = async (req, res) => {
     try {
+        console.log(req.body)
         const id = req.body.title
         const price = req.body.price
         const total = Math.floor(parseInt(req.params.total))
@@ -159,7 +164,7 @@ module.exports.Thanhtoan = async (req, res) => {
             const pricetmp = allprice[0].totalprice - parseInt(price)
             await Account.updateOne({
                 account: decode.account
-            },{
+            }, {
                 totalprice: pricetmp
             })
         }
@@ -263,7 +268,7 @@ module.exports.InforUsers = async (req, res) => {
         })
         await Account.updateOne({
             account: decoded.account
-        },{
+        }, {
             totalbill: parseInt(count)
         })
         if (decoded.exp < Math.floor(Date.now() / 1000)) {
@@ -285,3 +290,41 @@ module.exports.Robux = async (req, res) => {
     res.json(data)
 }
 // End Robux
+
+// [POST] Roblox
+module.exports.Allgame = async (req, res) => {
+    try {
+        const data = await Categorytongquan.find({})
+        res.json(data)
+    } catch (error) {
+        res.json("Error")
+    }
+}
+// End Roblox
+
+// [GET] Account Lien quan
+module.exports.Account = async (req, res) => {
+    try {
+        const data = await AccountLienquan.find({
+            id: req.params.id
+        })
+        res.json(data)
+    } catch (error) {
+        res.json("Error")
+    }
+}
+// End Account Lien quan
+
+// [GET] Account Free Fire
+module.exports.FreeFire = async (req, res) => {
+    try {
+        const data = await AccountFreeFire.find({
+            id: req.params.id
+        })
+        res.json(data)
+    } catch (error) {
+        res.json("Error")
+    }
+}
+// End Account Free Fire
+

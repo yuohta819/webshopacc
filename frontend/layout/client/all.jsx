@@ -2,37 +2,33 @@ import "../../public/css/Hearder.css"
 import TrangChu from "./Trangchu";
 import React, { useState } from 'react';
 import { RiMessengerLine } from "react-icons/ri";
-import { RiMessengerFill } from "react-icons/ri";
-import Box from "./box";
-import { Link } from "react-router-dom";
+
+import BoxRoblox from "./box/Roblox";
+import { Link, Outlet } from "react-router-dom";
 import SideBar from "./siderbar";
+import BoxLienQuan from "./box/Lienquan";
+import BoxFreefire from "./box/freefire";
+import ProductCarousel from "./ImgTongquan/Imngpaging";
+import BoxGLienminh from "./box/Lienminh";
+import BoxGenshin from "./box/genshin";
+import Result from "./result";
 function All() {
     const link = import.meta.env.VITE_FACEBOOK_LOC
-    const URL_QTV= import.meta.env.VITE_FACEBOOOK_CTV_1
     return (
         <>
             <div className="selection-2">
-                <img style={{maxWidth: '100%', height: "auto"}} src="https://cdn3.upanh.info/upload/server-sw3/images/Banner%20Roblox_.jpg" alt="" />
+                <ProductCarousel />
             </div>
             <div className="selection-3">
                 <TrangChu />
             </div>
             <div className="selection-4">
-                <Box />
+                <BoxRoblox />
+                <BoxLienQuan />
+                <BoxFreefire />
             </div>
-                <Link to={`${link}`}>
-                <div className="selection-5" style={{zIndex: '4'}}>
-                    <RiMessengerFill />
-                </div>
-                </Link>
-                <SideBar />
-            <div className="selection-end">
-                <p>© Copyright 2023 - Privacy Policy - Terms of Service</p>
-                <p>Operated by Lộc Trầm Cảm & Phạm Khải, All Rights Reserved</p>
-                <Link to={`${link}`}>FACEBOOK QTV LỘC TRẦM CẢM</Link>
-                <br />
-                <Link to={`${URL_QTV}`}>FACEBOOK QTV PHẠM KHẢI</Link>
-            </div>
+            
+           
         </>
     )
 }

@@ -3,7 +3,7 @@ const express = require('express')
 const route = express.Router();
 const Controller = require("../../controllers/client/index.controllers")
 // [GET] Signup
-route.post("/signup", Controller.Singup)
+route.post("/signup/:id", Controller.Singup)
 // End Signup
 
 // [GET] Login
@@ -49,4 +49,18 @@ route.post("/detail/infor", Controller.InforUsers)
 // [GET] Users
 route.get("/robux", Controller.Robux)
 // End Users
+
+// [GET] Users
+route.get("/allgame", Controller.Allgame)
+// End Users
+
+// [GET] Account Lien Quan
+route.get("/account/:id", Controller.Account)
+// End Account Lien Quan
+
+// [GET] Account  Free Fire
+route.get("/freefire/:id", Controller.FreeFire)
+// End Account  Free Fire
+
+
 module.exports = route

@@ -10,7 +10,7 @@ const URL = process.env.URL_FRONTEND
 const routeClient = require("../backend/router/client/index.route")
 const routeAdmin = require("../backend/router/admin/index.route")
 const routeQTV = require("../backend/router/QTV/index.route")
-
+const routeGoogle = require("../backend/router/Google/index.route")
 const methodOverride = require('method-override');
 
 app.use(cookieParser());
@@ -33,6 +33,7 @@ app.use(express.urlencoded({ extended: true }))
 routeClient(app)
 routeAdmin(app)
 routeQTV(app)
+routeGoogle(app)
 app.listen(PORT , () => {
   console.log(`Example app listening on port ${PORT}`)
 })

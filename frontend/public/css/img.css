@@ -1,0 +1,38 @@
+.ant-row-center {
+    margin: 0 !important;
+    display: block;
+}
+.selection-2 :where(.css-dev-only-do-not-override-cdzvx5).ant-card .ant-card-cover >*  {
+    width: 1156px;
+    border-radius: 5px;
+    height: 607px;
+}
+.selection-2 .box-1 .ant-col .ant-card-bordered  {
+    padding: 0 !important;
+}
+.selection-2 :where(.css-dev-only-do-not-override-cdzvx5).ant-pagination .ant-pagination-item {
+    display: none;
+}
+.selection-2 .ant-card-cover {
+    border: 1px solid white;
+    padding: 0;
+}
+.selection-2 .ant-card-body {
+    padding: 0;
+}
+.selection-2 {
+    position: relative;
+}
+.selection-2 .ant-pagination-prev  {
+    position: absolute;
+    top: 200px;
+}
+.selection-2 .anticon svg {
+    width: 60px;
+    height: 249px;
+}
+.selection-2 .anticon-right  {
+    position: absolute;
+    right: 0;
+    top: 200px;
+}

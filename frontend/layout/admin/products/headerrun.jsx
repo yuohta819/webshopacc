@@ -33,7 +33,7 @@ function HeaderRun() {
     }
     return (
         <>
-            <form action="" onSubmit={handdleSubmit}>
+            <form action="" onSubmit={handdleSubmit} style={{textAlign: "center"}}>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">@</span>

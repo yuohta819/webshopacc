@@ -18,15 +18,15 @@ function TrangChu() {
             <Flex gap="middle" align="start" vertical>
                 <Flex style={boxStyle} justify={justify} align={alignItems}>
                    <button><img src="https://cdn3.upanh.info/upload/server-sw3/images/Acc%20Roblox%20Gia%20R%E1%BA%BB.png" alt="" /></button>
-                    <button><img src="https://cdn3.upanh.info/upload/server-sw3/images/D%E1%BB%8Bch%20v%E1%BB%A5%20TTD.png" alt="" /></button>
-                    <button><img src="https://cdn3.upanh.info/upload/server-sw3/images/D%E1%BB%8Bch%20v%E1%BB%A5%20Anime%20Defenders.png" alt="" /></button>
+                    <button><img src="https://cdn3.upanh.info/upload/server-sw3/images/Acc%20FF%20Gia%20R%E1%BA%BB.png" alt="" /></button>
+                    <button><img src="https://lightlauriel.com/img/danh-muc-hot/cate_6.png" alt="" /></button>
                 </Flex>
             </Flex>
             <Flex gap="middle" align="start" vertical>
                 <Flex style={boxStyle} justify={justify} align={alignItems}>
-                    <button><img src="https://cdn3.upanh.info/upload/server-sw3/images/Gamepass%20Blox%20Fruits.png" alt="" /></button>
-                    <button><img src="https://cdn3.upanh.info/upload/server-sw3/images/S%E1%BA%A3n%20Ph%E1%BA%A9m%20Hot.png" alt="" /></button>
-                    <button><img src="https://cdn3.upanh.info/upload/server-sw3/images/icon-discord-nhan0qua.png" alt="" /></button>
+                    <button><img src="https://shopfifavn.com/statics/themes/nghiencode/images/default-thumbnail.jpg" style={{height: "80px", borderRadius: "10px"}} alt="" /></button>
+                    <button><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lvg7de2imvl06f" style={{height: "80px", borderRadius: "10px"}} alt="" /></button>
+                    <button><img src="https://scdn-stc.vng.games/mainsite/images/tocchien-icon.png" alt="" style={{height: "80px", borderRadius: "10px"}} /></button>
                 </Flex>
             </Flex>
         </>

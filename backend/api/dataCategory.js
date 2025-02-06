@@ -9,6 +9,10 @@ const bloxfruitShema = new mongoose.Schema({
     priceRobux: String,
     type: String,
     price: String,
+    img: [],
+    imgRobuxReal: [],
+    imgFruit: [],
+    imgToilet: [],
     active: {
         type: Boolean,
         default: false

@@ -8,7 +8,7 @@ route.post("/login", middlewaveQTV.QTV,Controller.Login)
 // End Login QTV
 
 // [GET] Gamepass
-route.get("/bill", Controller.Tongquan)
+route.get("/bill/:id", Controller.Tongquan)
 // End Gamepass
 
 
